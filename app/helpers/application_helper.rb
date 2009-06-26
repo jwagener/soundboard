@@ -8,7 +8,15 @@ module ApplicationHelper
     '/logout'
   end
   
-  def register_user_path
-    '/register'
+  def signup_user_path
+    '/signup'
+  end
+  
+  def home_path
+    {:controller => 'home', :action => 'index'}
+  end
+  
+  def users_path
+    {:controller => 'user'}
   end
 end

@@ -6,7 +6,9 @@ ActionController::Routing::Routes.draw do |map|
   # Keep in mind you can assign values other than :controller and :action
   map.connect 'login', :controller => 'auth', :action => 'login'
   map.connect 'logout', :controller => 'auth', :action => 'logout'
-  map.connect 'register', :controller => 'user', :action => 'register'
+  map.connect 'signup', :controller => 'user', :action => 'signup'
+  #map.connect 'user', '/users'
+  #map.connect 'users', :controller => 'user', :action => 'all'
   
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
@@ -14,7 +16,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
-
+  map.resources :user
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
 

@@ -1,0 +1,27 @@
+<h3 class="contenttitle">Sign Up</h3>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name, 'Name' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email, 'E-Mail address' %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password, 'Password' %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, 'Confirm Password' %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.submit 'Sign Up' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', home_path %>

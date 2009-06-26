@@ -1,2 +1,7 @@
-<h3>Howdy</h3>
-<p>Please <%= link_to "login", login_path %> or <%= link_to "sign up", register_user_path %>.</p>
+<% if not session[:user_id] -%>
+	<h3 class="contenttitle">Howdy</h3>
+	<p>Please <%= link_to "login", login_path %> or <%= link_to "sign up", signup_user_path %>.</p>
+<% else -%>
+	<h3 class="contenttitle">Dashboard</h3>
+	Welcome to your personal Dashboard
+<% end -%>

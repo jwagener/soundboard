@@ -7,22 +7,47 @@ html, body {
 #sitewrapper {
 	position: absolute;
 	left: 50%;
-	margin-left: -300px;
+	margin-left: -320px;
 	width: 600px;
-	padding: 0 20px 20px 20px;
 	background-color: #eee;
 }
 
 #header {
-	
+	background-color: #e8e8eb;
+	padding: 10px 20px;
 }
 
 #footer {
 	font-size: 0.8em;
 	color: #222;
 	text-align: center;
+	padding: 20px;
+}
+
+#navi {
+	padding: 5px 20px;
 }
 
 #content {
-	
+	padding: 10px 20px 0 20px;
+}
+
+#notice {
+	color: #0f0;
+}
+
+#error {
+	color: f00;
+}
+
+form .errorExplanation, .fieldWithErrors {
+	color: #f00;
+}
+
+form .fieldWithErrors input {
+	background-color: #f00;
+}
+
+form .errorExplanation h2 {
+	font-size: 1.2em;
 }

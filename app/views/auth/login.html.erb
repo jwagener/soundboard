@@ -1,2 +1,20 @@
-<h1>Auth#login</h1>
-<p>Find me in app/views/auth/login.html.erb</p>
+<h3 class="contenttitle">Login</h3>
+
+<div class="loginform"> 
+	<% form_tag do %>
+		<fieldset>
+			<legend>Please Log In</legend>
+			<div>
+				<label for="name">Name:</label>
+				<%= text_field_tag :name, params[:name] %>
+			</div>
+			<div>
+				<label for="password">Password:</label>
+				<%= password_field_tag :password, params[:password] %>
+			</div>
+			<div>
+			<%= submit_tag "Login" %>
+		</div>
+	</fieldset>
+	<% end %>
+</div>
