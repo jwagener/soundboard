@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
+  consumer_token = 'Ple0HwJGsmRpMhBPztccQQ'
+  consumer_secret = 'SpIhzvPlyWJUAQ8Sb4jYdLPQmKY3ClBbPcts9BlgtVc'
+  $sc_consumer = Soundcloud.consumer(consumer_token,consumer_secret, 'http://api.sandbox-soundcloud.com')
+  
 protected
   def authorize
     unless User.find_by_id(session[:user_id])

@@ -11,16 +11,16 @@
 		<div id="header">
 			<h1>SoundBoard</h1>
 		</div>
-		<div id="navi">
-			<%= link_to "Home", '/' %>
+		<ul id="navi">
+			<li><%= link_to "Home", '/' %></li>
 			<% if session[:user_id] -%>
-				<%= link_to "My Profile", {:controller => 'user', :action => 'profile', :id => session[:user_id]} %>
-				<%= link_to "Logout", logout_path %>
+				<li><%= link_to "My Profile", {:controller => 'user', :action => 'profile', :id => session[:user_id]} %></li>
+				<li><%= link_to "Logout", logout_path %></li>
 			<% else -%>
-				<%= link_to "Login", login_path %>
-				<%= link_to "Sign Up", signup_user_path %>
+				<li><%= link_to "Login", login_path %></li>
+				<li><%= link_to "Sign Up", signup_user_path %></li>
 			<% end -%>
-		</div>
+		</ul>
 		<div id="content">
 			<% if flash[:notice] -%> 
 			<div id="notice"><%= flash[:notice] %></div> 

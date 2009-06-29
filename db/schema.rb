@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090626085848) do
+ActiveRecord::Schema.define(:version => 20090629132304) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20090626085848) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sc_user_id"
+    t.string   "sc_access_token"
+    t.string   "sc_access_token_secret"
   end
 
 end

@@ -4,11 +4,11 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name, 'Name' %><br />
+    <%= f.label :name, 'Username' %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :email, 'E-Mail address' %><br />
+    <%= f.label :email, 'E-Mail Address' %><br />
     <%= f.text_field :email %>
   </p>
   <p>
@@ -20,8 +20,6 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p>
-    <%= f.submit 'Sign Up' %>
+    <%= link_to 'Cancel', home_path %> <%= f.submit 'Sign Up' %>
   </p>
 <% end %>
-
-<%= link_to 'Cancel', home_path %>

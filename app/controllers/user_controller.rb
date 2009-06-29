@@ -19,6 +19,15 @@ class UserController < ApplicationController
   end
 
   def settings
+    if Integer(session[:user_id]) != Integer(params[:id])
+      flash[:notice] = "You're not allowed to see other members' settings!"
+      redirect_to(:action => 'settings', :id => session[:user_id])
+    else
+      @user = User.find(session[:user_id])
+    end
   end
-
+  
+  def connect
+    
+  end
 end

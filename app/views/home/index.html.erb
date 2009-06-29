@@ -1,7 +1,17 @@
-<% if not session[:user_id] -%>
-	<h3 class="contenttitle">Howdy</h3>
-	<p>Please <%= link_to "login", login_path %> or <%= link_to "sign up", signup_user_path %>.</p>
-<% else -%>
-	<h3 class="contenttitle">Dashboard</h3>
-	Welcome to your personal Dashboard
+<h3 class="contenttitle">Howdy</h3>
+<p>Please <%= link_to "login", login_path %> or <%= link_to "sign up", signup_user_path %>.</p>
+
+<h4>Hot Tracks</h4>
+<% @hot_tracks[0...5].each do |track| -%>
+	<div style="font-size: 11px;">
+		<object height="81" width="100%">
+			<param name="movie" value="http://player.soundcloud.com/player.swf?track=<%= track.permalink %>"></param>
+			<param name="allowscriptaccess" value="always"></param>
+			<embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?track=<%= track.permalink %>" type="application/x-shockwave-flash" width="100%"> </embed>
+		</object>
+		<div style="padding-top: 5px;">
+			<a href="<%= track.permalink_url %>"><%= track.title %></a>  by  <a href="<%= track.user_id %>"><%= track.user_id %></a>
+		</div>
+	</div>
+	<br />
 <% end -%>
