@@ -1,3 +1,5 @@
+<%= javascript_include_tag "popup.js" %>
+
 <h3 class="contenttitle">Sign Up</h3>
 
 <% form_for(@user) do |f| %>
@@ -8,10 +10,6 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :email, 'E-Mail Address' %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
     <%= f.label :password, 'Password' %><br />
     <%= f.password_field :password %>
   </p>
@@ -19,7 +17,18 @@
     <%= f.label :password_confirmation, 'Confirm Password' %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+  <div style="border: 1px solid #aaa;margin: 10px 0 10px 0;padding: 5px 10px 0 10px;background: #e6e6e6">
+  	<h4 style="margin: 10px 0 0 0">Connect with SoundCloud to get music into your account</h4>
+  	<button id="connect-sc" onclick="myPopUpWin();">Connect with SoundCloud</button>
+  	<div id="sc-connected" style="display:none">
+		Your <a href="#">Forss</a> SoundCloud account is now connected.
+	</div>
+  	<h5 style="margin: 10px 0 0 0">What is SoundCloud?</h5>
+  	<p style="font-size: 12px;color: #444">
+		Connect with SoundCloud to be able to upload music to your profile, and receive tracks in a hassle-free way. Don't have an account? Signing up is free and takes 30 seconds!
+	</p>
+  </div>
   <p>
-    <%= link_to 'Cancel', home_path %> <%= f.submit 'Sign Up' %>
+    <%= link_to 'Cancel', home_path %> <%= f.submit 'Sign up' %>
   </p>
 <% end %>

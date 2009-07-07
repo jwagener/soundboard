@@ -5732,3 +5732,1949 @@ Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:13:42) [GET]
 Rendering template within layouts/application
 Rendering user/signup
 Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:21:50) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:25:22) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-06-29 18:25:40) [POST]
+  Parameters: {"user"=>{"name"=>"", "password_confirmation"=>"", "password"=>"", "email"=>""}, "authenticity_token"=>"JF7miMnvFLAFR+vVEbxD+S3GdHiQIFOhKe+UkFmPNx8="}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/user]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:25:40) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:33:26) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+
+ActionView::TemplateError (No expansion found for :popup) on line #1 of app/views/user/signup.html.erb:
+1: <%= javascript_include_tag :popup %>
+2: 
+3: <h3 class="contenttitle">Sign Up</h3>
+4: 
+
+    app/views/user/signup.html.erb:1
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:33:55) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+
+ActionView::TemplateError (No expansion found for :popup) on line #1 of app/views/user/signup.html.erb:
+1: <%= javascript_include_tag :popup %>
+2: 
+3: <h3 class="contenttitle">Sign Up</h3>
+4: 
+
+    app/views/user/signup.html.erb:1
+
+Rendered rescues/_trace (53.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:33:59) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+
+ActionView::TemplateError (No expansion found for :popup) on line #1 of app/views/user/signup.html.erb:
+1: <%= javascript_include_tag :popup %>
+2: 
+3: <h3 class="contenttitle">Sign Up</h3>
+4: 
+
+    app/views/user/signup.html.erb:1
+
+Rendered rescues/_trace (47.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:34:02) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-29 18:34:21) [GET]
+
+ActionController::RoutingError (No route matches "/sc-connect.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-06-29 18:34:21) [POST]
+  Parameters: {"user"=>{"name"=>"", "password_confirmation"=>"", "password"=>"", "email"=>""}, "authenticity_token"=>"JF7miMnvFLAFR+vVEbxD+S3GdHiQIFOhKe+UkFmPNx8="}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/user]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:34:21) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:34:52) [POST]
+  Parameters: {"name"=>"zetta3", "commit"=>"Login", "authenticity_token"=>"JF7miMnvFLAFR+vVEbxD+S3GdHiQIFOhKe+UkFmPNx8=", "password"=>"bla"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'zetta3') LIMIT 1[0m
+Redirected to http://localhost:3000/user
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing UserController#index (for 127.0.0.1 at 2009-06-29 18:34:53) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: connect, create, profile, settings, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-06-29 18:35:17) [GET]
+Redirected to http://localhost:3000/home/dashboard
+Completed in 7139ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:35:24) [GET]
+Redirected to http://localhost:3000/
+Filter chain halted as [:loggedoutonly] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:35:24) [GET]
+Redirected to http://localhost:3000/
+Filter chain halted as [:loggedoutonly] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:35:25) [POST]
+  Parameters: {"name"=>"zetta3", "commit"=>"Login", "authenticity_token"=>"JF7miMnvFLAFR+vVEbxD+S3GdHiQIFOhKe+UkFmPNx8=", "password"=>"bla"}
+Redirected to http://localhost:3000/
+Filter chain halted as [:loggedoutonly] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-06-29 18:35:25) [GET]
+Redirected to http://localhost:3000/home/dashboard
+Completed in 1188ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-06-29 18:35:26) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 556ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-06-29 18:35:31) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-06-29 18:35:31) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1273ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:35:42) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-06-29 18:52:30) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1448ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:53:16) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:53:17) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:53:18) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:53:31) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:53:38) [POST]
+  Parameters: {"name"=>"zetta3", "commit"=>"Login", "authenticity_token"=>"JF7miMnvFLAFR+vVEbxD+S3GdHiQIFOhKe+UkFmPNx8=", "password"=>"bla"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'zetta3') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-06-29 18:53:38) [GET]
+Redirected to http://localhost:3000/home/dashboard
+Completed in 1256ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-06-29 18:53:39) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 312ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-06-29 18:54:21) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'zetta3' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'zetta@zetta.de' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "sc_user_id" = NULL, "sc_access_token" = NULL, "sc_access_token_secret" = NULL, "updated_at" = '2009-06-29 16:54:21' WHERE "id" = 3[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 188ms (View: 2, DB: 2) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#soundcloud (for 127.0.0.1 at 2009-06-29 18:54:24) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://api.sandbox-soundcloud.com/oauth/authorize?oauth_token=iuqt7oftX2SqQyPeuAIHw&oauth_callback=http://localhost:3000/auth/callback
+Completed in 187ms (DB: 0) | 302 Found [http://localhost/auth/soundcloud]
+
+
+Processing AuthController#callback (for 127.0.0.1 at 2009-06-29 18:54:25) [GET]
+  Parameters: {"oauth_token"=>"iuqt7oftX2SqQyPeuAIHw"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'zetta3' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'zetta@zetta.de' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "sc_user_id" = 78342, "sc_access_token" = 'RHQP1m0sseBHyW7n3cOE0w', "sc_access_token_secret" = 'z7EJJgYGN197zcN6S0snCuClNJjqWCIkQpWdg3QJwOU', "updated_at" = '2009-06-29 16:54:26' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/
+Completed in 304ms (DB: 1) | 302 Found [http://localhost/auth/callback?oauth_token=iuqt7oftX2SqQyPeuAIHw]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-06-29 18:54:26) [GET]
+Redirected to http://localhost:3000/home/dashboard
+Completed in 1199ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-06-29 18:54:27) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 370ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing UserController#profile (for 127.0.0.1 at 2009-06-29 18:54:45) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering user/profile
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/user/profile/3]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-06-29 18:54:47) [GET]
+Redirected to http://localhost:3000/home/dashboard
+Completed in 1197ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-06-29 18:54:48) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 345ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-06-29 18:55:07) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-06-29 18:55:07) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1427ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-06-29 18:55:15) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-06-29 18:55:42) [GET]
+
+ActionController::RoutingError (No route matches "/sc-connect.html" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-06-29 18:55:42) [POST]
+  Parameters: {"user"=>{"name"=>"", "password_confirmation"=>"", "password"=>"", "email"=>""}, "authenticity_token"=>"JF7miMnvFLAFR+vVEbxD+S3GdHiQIFOhKe+UkFmPNx8="}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/user]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-06-29 18:55:42) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-06-29 18:57:34) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1511ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2009-07-07 10:24:03) [GET]
+
+NameError (uninitialized constant ApplicationController::Soundcloud):
+  app/controllers/application_controller.rb:15
+  app/controllers/home_controller.rb:1
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 10:26:04) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6129ms (View: 178, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 10:26:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1187ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 10:26:47) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1390ms (View: 22, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 10:30:47) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1236ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 10:33:52) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 161ms (View: 159, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 10:34:39) [POST]
+  Parameters: {"name"=>"zetta3", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"bla"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'zetta3') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 65ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 10:34:39) [GET]
+Redirected to http://localhost:3000/home/dashboard
+Completed in 1192ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:34:40) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 382ms (View: 37, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:39:01) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 296ms (View: 7, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 10:39:05) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1132ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:39:10) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 332ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:39:26) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 3711ms (View: 2, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 10:39:29) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1123ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:39:36) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 287ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing UserController#profile (for 127.0.0.1 at 2009-07-07 10:39:50) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering user/profile
+Completed in 32ms (View: 25, DB: 1) | 200 OK [http://localhost/user/profile/3]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:40:05) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 398ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:41:11) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 301ms (View: 5, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:41:51) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 299ms (View: 5, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:42:00) [GET]
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 307ms (View: 6, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing UserController#profile (for 127.0.0.1 at 2009-07-07 10:44:16) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering user/profile
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/user/profile/3]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 10:44:18) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 350ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing UserController#profile (for 127.0.0.1 at 2009-07-07 10:44:21) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering user/profile
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/user/profile/3]
+
+
+Processing UserController#profile (for 127.0.0.1 at 2009-07-07 11:02:39) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering user/profile
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/user/profile/3]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:02:42) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1338ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 11:02:45) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 5754ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 11:02:51) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 349ms (View: 88, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 11:02:53) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:02:53) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1117ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-07-07 11:02:59) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 53ms (View: 46, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 11:03:01) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 11:03:06) [POST]
+  Parameters: {"name"=>"zetta3", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"bla"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'zetta3') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:03:06) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1148ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:03:29) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1349ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 11:03:33) [GET]
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 108ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:03:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1216ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 11:03:36) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 11:03:46) [POST]
+  Parameters: {"name"=>"zetta3", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"bla"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'zetta3') LIMIT 1[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 11:03:46) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 300ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:03:55) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1137ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 11:04:00) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:04:00) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1303ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-07-07 11:04:03) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090626085848)
+Migrating to AddOauthdataToUser (20090629132304)
+Migrating to RemoveEmailFromUsers (20090707091026)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "hashed_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime, "sc_user_id" integer, "sc_access_token" varchar(255), "sc_access_token_secret" varchar(255)) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "hashed_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime, "sc_user_id" integer, "sc_access_token" varchar(255), "sc_access_token_secret" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090707091026')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-07-07 11:13:31) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-07-07 11:13:49) [POST]
+  Parameters: {"user"=>{"name"=>"SirC", "password_confirmation"=>"shibby", "password"=>"shibby"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/user]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 11:13:49) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-07-07 11:16:49) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-07-07 11:16:57) [POST]
+  Parameters: {"user"=>{"name"=>"SirC", "password_confirmation"=>"shibby", "password"=>"shibby"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/user]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 11:16:57) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 11:17:17) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-07-07 11:17:25) [POST]
+  Parameters: {"user"=>{"name"=>"SirC", "password_confirmation"=>"shibby", "password"=>"shibby"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "sc_user_id", "updated_at", "hashed_password", "sc_access_token", "sc_access_token_secret", "created_at") VALUES('SirC', '182818300.172142075917405', NULL, '2009-07-07 09:17:25', '7e0aef06393461cccf1b25a8d1816dcf70ac74c7', NULL, NULL, '2009-07-07 09:17:25')[0m
+Redirected to http://localhost:3000/user/profile/4
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/user]
+
+
+Processing UserController#profile (for 127.0.0.1 at 2009-07-07 11:17:25) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering user/profile
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/user/profile/4]
+
+
+Processing UserController#profile (for 127.0.0.1 at 2009-07-07 11:19:33) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering user/profile
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/user/profile/4]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:19:35) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1146ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 11:19:39) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 11:19:47) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+Redirected to http://localhost:3000/user/profile/4
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing UserController#profile (for 127.0.0.1 at 2009-07-07 11:19:47) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering user/profile
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/user/profile/4]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 11:22:42) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:22:42) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1163ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-07-07 11:22:46) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 15ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-07-07 11:22:54) [POST]
+  Parameters: {"user"=>{"name"=>"SirC0", "password_confirmation"=>"shibby", "password"=>"shibby"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC0') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "sc_user_id", "updated_at", "hashed_password", "sc_access_token", "sc_access_token_secret", "created_at") VALUES('SirC0', '176704400.149771016115407', NULL, '2009-07-07 09:22:54', 'c53ce4fe1585eb25daf65a571bbb0324f00ed76f', NULL, NULL, '2009-07-07 09:22:54')[0m
+Redirected to http://localhost:3000/user/dashboard
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/user]
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 11:22:54) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: connect, create, profile, settings, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 11:24:41) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: connect, create, profile, settings, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-07-07 11:24:49) [POST]
+  Parameters: {"user"=>{"name"=>"SirC1", "password_confirmation"=>"shibby", "password"=>"shibby"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC1') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "sc_user_id", "updated_at", "hashed_password", "sc_access_token", "sc_access_token_secret", "created_at") VALUES('SirC1', '196425700.477633605727261', NULL, '2009-07-07 09:24:49', '4addf188b53e1f5cbd8bfc53a31fab72ec166de1', NULL, NULL, '2009-07-07 09:24:49')[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/user]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 11:24:49) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC1' AND "users".id <> 6) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 99ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#soundcloud (for 127.0.0.1 at 2009-07-07 11:25:29) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Redirected to http://api.sandbox-soundcloud.com/oauth/authorize?oauth_token=NJblGl8rJsEGf70i9DCGQ&oauth_callback=http://localhost:3000/auth/callback
+Completed in 146ms (DB: 0) | 302 Found [http://localhost/auth/soundcloud]
+
+
+Processing AuthController#callback (for 127.0.0.1 at 2009-07-07 11:25:36) [GET]
+  Parameters: {"oauth_token"=>"NJblGl8rJsEGf70i9DCGQ"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC1' AND "users".id <> 6) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "sc_user_id" = 78342, "sc_access_token" = 'CwgKvSnF8L7YoCJiPM2mew', "sc_access_token_secret" = 'rl78yC2NnMeqf7e0BbwqVQCZcGx4qrNMUIxiuuwH2c', "updated_at" = '2009-07-07 09:25:36' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/
+Completed in 351ms (DB: 1) | 302 Found [http://localhost/auth/callback?oauth_token=NJblGl8rJsEGf70i9DCGQ]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:25:36) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1087ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 11:26:01) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 371ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 11:26:16) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC1' AND "users".id <> 6) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "sc_user_id" = NULL, "sc_access_token" = NULL, "sc_access_token_secret" = NULL, "updated_at" = '2009-07-07 09:26:17' WHERE "id" = 6[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 252ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#soundcloud (for 127.0.0.1 at 2009-07-07 11:26:18) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Redirected to http://api.sandbox-soundcloud.com/oauth/authorize?oauth_token=H9VZEV7QiCYc1TPVkS9F3Q&oauth_callback=http://localhost:3000/auth/callback
+Completed in 117ms (DB: 0) | 302 Found [http://localhost/auth/soundcloud]
+
+
+Processing AuthController#callback (for 127.0.0.1 at 2009-07-07 11:26:20) [GET]
+  Parameters: {"oauth_token"=>"H9VZEV7QiCYc1TPVkS9F3Q"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC1' AND "users".id <> 6) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "sc_user_id" = 78342, "sc_access_token" = 'Mm1Scryr9TuzijGWmTBkA', "sc_access_token_secret" = 'msAgt7etlNw36igEu7hdVrEUTLUDMxIuauaK5pLSwQ', "updated_at" = '2009-07-07 09:26:20' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 301ms (DB: 1) | 302 Found [http://localhost/auth/callback?oauth_token=H9VZEV7QiCYc1TPVkS9F3Q]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 11:26:20) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 280ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:26:27) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1079ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 11:26:38) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 319ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 11:26:53) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1126ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 11:27:02) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 274ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+/!\ FAILSAFE /!\  Tue Jul 07 12:37:02 +0200 2009
+  Status: 500 Internal Server Error
+  /Users/christian/Code/soundcloud/scconnect/app/helpers/application_helper.rb:25: syntax error, unexpected $end, expecting kEND
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:197:in `default_helper_module!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `__send__'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `inherited'
+    /Users/christian/Code/soundcloud/scconnect/app/controllers/application_controller.rb:7
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Tue Jul 07 12:37:05 +0200 2009
+  Status: 500 Internal Server Error
+  /Users/christian/Code/soundcloud/scconnect/app/helpers/application_helper.rb:25: syntax error, unexpected $end, expecting kEND
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:197:in `default_helper_module!'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `__send__'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:212:in `inherited'
+    /Users/christian/Code/soundcloud/scconnect/app/controllers/application_controller.rb:7
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:37:14) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1574ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:37:20) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 6) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 31ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:37:20) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1399ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:38:49) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1415ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:38:52) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:38:57) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+Redirected to http://localhost:3000/user
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing UserController#index (for 127.0.0.1 at 2009-07-07 12:38:57) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, dashboard, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#index (for 127.0.0.1 at 2009-07-07 12:40:22) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, dashboard, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:40:29) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create, dashboard, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:41:16) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1302ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:41:21) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create, dashboard, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:42:26) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create, dashboard, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:42:28) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create, dashboard, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:42:30) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1267ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:42:33) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+NameError (undefined local variable or method `home_path' for #<AuthController:0x2257c84>):
+  app/controllers/auth_controller.rb:19:in `logout'
+
+Rendered rescues/_trace (130.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:43:20) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+NameError (undefined local variable or method `home_path' for #<AuthController:0x25c716c>):
+  app/controllers/auth_controller.rb:19:in `logout'
+
+Rendered rescues/_trace (31.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:43:21) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+NameError (undefined local variable or method `home_path' for #<AuthController:0x24ba378>):
+  app/controllers/auth_controller.rb:19:in `logout'
+
+Rendered rescues/_trace (30.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:43:22) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+NameError (undefined local variable or method `home_path' for #<AuthController:0x23ded28>):
+  app/controllers/auth_controller.rb:19:in `logout'
+
+Rendered rescues/_trace (31.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:43:23) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+NameError (undefined local variable or method `home_path' for #<AuthController:0x258edf8>):
+  app/controllers/auth_controller.rb:19:in `logout'
+
+Rendered rescues/_trace (31.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:44:40) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:44:41) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1228ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:44:45) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1337ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:44:49) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:44:55) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+Redirected to http://localhost:3000/logout
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:44:55) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:44:55) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1271ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:45:07) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:45:13) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+
+NameError (undefined local variable or method `users_dashboard_path' for #<AuthController:0x24afbd0>):
+  app/controllers/auth_controller.rb:9:in `login'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:46:59) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+Redirected to http://localhost:3000/
+Filter chain halted as [:loggedoutonly] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:46:59) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1278ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:47:05) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create, dashboard, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#dashboard (for 127.0.0.1 at 2009-07-07 12:47:50) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/dashboard
+Completed in 104ms (View: 7, DB: 1) | 200 OK [http://localhost/user/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:47:53) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1175ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:47:55) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:47:56) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1282ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-07-07 12:48:00) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserController#index (for 127.0.0.1 at 2009-07-07 12:48:05) [POST]
+  Parameters: {"user"=>{"name"=>"bla", "password_confirmation"=>"bla", "password"=>"bla"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, dashboard, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#index (for 127.0.0.1 at 2009-07-07 12:50:22) [POST]
+  Parameters: {"user"=>{"name"=>"bla", "password_confirmation"=>"bla", "password"=>"bla"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+Redirected to http://localhost:3000/user/dashboard
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/user]
+
+
+Processing UserController#dashboard (for 127.0.0.1 at 2009-07-07 12:50:22) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/user_controller.rb:27:in `dashboard'
+
+Rendered rescues/_trace (34.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#dashboard (for 127.0.0.1 at 2009-07-07 12:50:29) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/user_controller.rb:27:in `dashboard'
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#index (for 127.0.0.1 at 2009-07-07 12:50:32) [GET]
+Redirected to http://localhost:3000/user/dashboard
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/user/]
+
+
+Processing UserController#dashboard (for 127.0.0.1 at 2009-07-07 12:50:32) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/user_controller.rb:27:in `dashboard'
+
+Rendered rescues/_trace (98.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:51:18) [GET]
+  Parameters: {"id"=>"dashboar"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create, dashboard, index, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:51:21) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create, dashboard, index, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:51:57) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1111ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:52:03) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1396ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:53:22) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:53:28) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+Redirected to http://localhost:3000/user/dashboard
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:53:28) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create, dashboard, and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:54:56) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:55:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1131ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:55:37) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#show (for 127.0.0.1 at 2009-07-07 12:55:54) [GET]
+  Parameters: {"id"=>"dashboard"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create and signup):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:55:59) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1123ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 12:56:03) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template home/dashboard.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 12:56:14) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 110ms (View: 10, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:56:16) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1112ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 12:56:19) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 89ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#soundcloud (for 127.0.0.1 at 2009-07-07 12:56:20) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://api.sandbox-soundcloud.com/oauth/authorize?oauth_token=zM5jEDqF1VbUKaexMdaB3Q&oauth_callback=http://localhost:3000/auth/callback
+Completed in 174ms (DB: 0) | 302 Found [http://localhost/auth/soundcloud]
+
+
+Processing AuthController#callback (for 127.0.0.1 at 2009-07-07 12:56:23) [GET]
+  Parameters: {"oauth_token"=>"zM5jEDqF1VbUKaexMdaB3Q"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "sc_user_id" = 78342, "sc_access_token" = '1W5QlhNF1eRO3uC5WfD7BQ', "sc_access_token_secret" = 'i8qJbWWFusy3OCN8I9wDlt6IQd7dmpdH29uwWg4uV8', "updated_at" = '2009-07-07 10:56:23' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 655ms (DB: 1) | 302 Found [http://localhost/auth/callback?oauth_token=zM5jEDqF1VbUKaexMdaB3Q]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 12:56:24) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 640ms (View: 2, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:56:28) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:56:28) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1147ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:57:11) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 12:57:18) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 12:57:18) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 352ms (View: 2, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 12:57:21) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 12:57:21) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1145ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-07-07 12:57:24) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-07-07 12:57:29) [POST]
+  Parameters: {"user"=>{"name"=>"blabla", "password_confirmation"=>"bla", "password"=>"bla"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'blabla') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "sc_user_id", "updated_at", "hashed_password", "sc_access_token", "sc_access_token_secret", "created_at") VALUES('blabla', '200787200.476389375569929', NULL, '2009-07-07 10:57:29', '7dce665f68518443dab72aed4c87eb49a4608aad', NULL, NULL, '2009-07-07 10:57:29')[0m
+
+NameError (undefined local variable or method `users_dashboard_path' for #<UserController:0x265fc3c>):
+  app/controllers/user_controller.rb:12:in `create'
+
+Rendered rescues/_trace (34.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-07-07 12:58:06) [POST]
+  Parameters: {"user"=>{"name"=>"blabla", "password_confirmation"=>"bla", "password"=>"bla"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'blabla') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/user]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-07-07 12:58:10) [POST]
+  Parameters: {"user"=>{"name"=>"blabla2", "password_confirmation"=>"bla", "password"=>"bla"}, "commit"=>"Sign up", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s="}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'blabla2') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "sc_user_id", "updated_at", "hashed_password", "sc_access_token", "sc_access_token_secret", "created_at") VALUES('blabla2', '191911500.322992313070328', NULL, '2009-07-07 10:58:10', 'b11e05ff3f75fb8144a13b89872ddf4e9a20b5b1', NULL, NULL, '2009-07-07 10:58:10')[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/user]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 12:58:10) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 8) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) [0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'blabla2' AND "users".id <> 8) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 99ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 13:00:08) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 8) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 13:00:09) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1110ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 13:03:22) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1285ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 13:03:24) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 13:13:06) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+Redirected to http://localhost:3000/logout
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 13:13:06) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 13:13:06) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1208ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 13:13:10) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1548ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 13:13:12) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 13:13:18) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:13:18) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 354ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 13:13:31) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1270ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:13:33) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 381ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:15:02) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 334ms (View: 6, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:15:39) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 347ms (View: 6, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:20:10) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 470ms (View: 2, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:20:40) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 323ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:21:44) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 456ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:21:48) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 451ms (View: 2, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 13:21:53) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 13:21:53) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1220ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 13:21:56) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-07-07 13:22:03) [POST]
+  Parameters: {"name"=>"SirC", "commit"=>"Login", "authenticity_token"=>"QdREmx1SOMyhkgUkVOim5JwzVmWYXzmnz98AwZ1BY/s=", "password"=>"shibby"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'SirC') LIMIT 1[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/login]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:22:03) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 319ms (View: 2, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:24:14) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "sc_user_id" = NULL, "sc_access_token" = NULL, "sc_access_token_secret" = NULL, "updated_at" = '2009-07-07 11:24:15' WHERE "id" = 4[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 226ms (View: 16, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:24:23) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 183ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#soundcloud (for 127.0.0.1 at 2009-07-07 13:24:38) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://api.sandbox-soundcloud.com/oauth/authorize?oauth_token=5Bl11vnQ1O0m4UtTd1UZw&oauth_callback=http://localhost:3000/auth/callback
+Completed in 151ms (DB: 0) | 302 Found [http://localhost/auth/soundcloud]
+
+
+Processing AuthController#callback (for 127.0.0.1 at 2009-07-07 13:24:41) [GET]
+  Parameters: {"oauth_token"=>"5Bl11vnQ1O0m4UtTd1UZw"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "sc_user_id" = 78342, "sc_access_token" = 'wpx0879xyOwj197Nhrhqg', "sc_access_token_secret" = '4Vdr5KWUpXFDWzMS9ySDFNAdQ09PpXEd5abkwc3YLG4', "updated_at" = '2009-07-07 11:24:41' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 339ms (DB: 1) | 302 Found [http://localhost/auth/callback?oauth_token=5Bl11vnQ1O0m4UtTd1UZw]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:24:41) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 303ms (View: 1, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:25:02) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 357ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:25:13) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+  [4;35;1mUser Update (189.8ms)[0m   [0mUPDATE "users" SET "sc_user_id" = NULL, "sc_access_token" = NULL, "sc_access_token_secret" = NULL, "updated_at" = '2009-07-07 11:25:13' WHERE "id" = 4[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 360ms (View: 15, DB: 191) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#soundcloud (for 127.0.0.1 at 2009-07-07 13:25:20) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://api.sandbox-soundcloud.com/oauth/authorize?oauth_token=o8jOTQ0qnql2egDLWdbw&oauth_callback=http://localhost:3000/auth/callback
+Completed in 254ms (DB: 0) | 302 Found [http://localhost/auth/soundcloud]
+
+
+Processing AuthController#callback (for 127.0.0.1 at 2009-07-07 13:25:23) [GET]
+  Parameters: {"oauth_token"=>"o8jOTQ0qnql2egDLWdbw"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'SirC' AND "users".id <> 4) LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "sc_user_id" = 78342, "sc_access_token" = 'W6IiBeg8Jagp2pdi21vSQ', "sc_access_token_secret" = 'LQVM6FBIpQK0vbLFR88uCFcN4Fq13igcDkghIKds8', "updated_at" = '2009-07-07 11:25:23' WHERE "id" = 4[0m
+Redirected to http://localhost:3000/home/dashboard
+Completed in 314ms (DB: 1) | 302 Found [http://localhost/auth/callback?oauth_token=o8jOTQ0qnql2egDLWdbw]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:25:23) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 368ms (View: 2, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:28:27) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 335ms (View: 5, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:28:42) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 357ms (View: 6, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:28:55) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 508ms (View: 5, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 13:29:31) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 312ms (View: 5, DB: 1) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 15:19:38) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6318ms (View: 40, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-07-07 15:21:44) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 734ms (View: 2, DB: 0) | 200 OK [http://localhost/home/dashboard]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-07-07 15:38:56) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-07 15:38:56) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1168ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-07-07 15:39:00) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 18ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]

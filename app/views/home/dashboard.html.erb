@@ -3,18 +3,22 @@
 <% if not @me -%>
 	<%= link_to 'Connect to Soundcloud', {:controller => :auth, :action => :soundcloud}%>
 <% else -%>	
-	<img style="float: left; margin: 0 10px 10px 0" src="<%= @me.avatar_url %>" />
-	You're connected to SoundCloud as <%= @me.username %>.
+	<img style="float: left; margin: 0 10px 10px 0; border:5px #ddd solid;" src="<%= @me.avatar_url %>" />
+	You're connected to SoundCloud as <%= @me.username %>.<br />
+	<small>You can revoke the connection at SoundCloud.com > Settings.</small>
 	
 	<% if @track -%>
-		<div style="font-size: 11px;">
-			<object height="81" width="100%">
-				<param name="movie" value="http://player.sandbox-soundcloud.com/player.swf?track=<%= @track.permalink %>"></param>
-				<param name="allowscriptaccess" value="always"></param>
-				<embed allowscriptaccess="always" height="81" src="http://player.sandbox-soundcloud.com/player.swf?track=<%= @track.permalink %>" type="application/x-shockwave-flash" width="100%"> </embed>
-			</object>
-			<div style="padding-top: 5px;">
-				<a href="<%= @track.permalink_url %>"><%= @track.title %></a>  by  <a href="<%= @me.permalink_url %>"><%= @me.username %></a>
+		<div style="clear:both;">
+			<strong>Last Track</strong>
+			<div style="font-size: 11px;">
+				<object height="81" width="100%">
+					<param name="movie" value="http://player.sandbox-soundcloud.com/player.swf?track=<%= @track.permalink %>"></param>
+					<param name="allowscriptaccess" value="always"></param>
+					<embed allowscriptaccess="always" height="81" src="http://player.sandbox-soundcloud.com/player.swf?track=<%= @track.permalink %>" type="application/x-shockwave-flash" width="100%"> </embed>
+				</object>
+				<div style="padding-top: 5px;">
+					<a href="<%= @track.permalink_url %>"><%= @track.title %></a>  by  <a href="<%= @me.permalink_url %>"><%= @me.username %></a>
+				</div>
 			</div>
 		</div>
 	<% end -%>

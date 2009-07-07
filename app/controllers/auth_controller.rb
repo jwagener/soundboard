@@ -6,7 +6,7 @@ class AuthController < ApplicationController
         session[:user_id] = user.id
         uri = session[:original_uri]
         session[:original_uri] = nil
-        redirect_to(uri || {:controller => 'home', :action => 'index'})
+        redirect_to(uri || {:controller => 'home', :action => 'dashboard'})
       else
         flash.now[:notice] = "Invalid user / password combination"
       end
@@ -19,7 +19,11 @@ class AuthController < ApplicationController
     redirect_to(:controller => 'home')
   end
 
-  def soundcloud  
+  # This will get a oauth request token from Soundcloud and 
+  # then redirect the user to the Soundcloud authorization page.
+  # It stores request token and secret in the session to
+  # remember it, when it returns to our defined callback page.
+  def soundcloud
     request_token = $sc_consumer.get_request_token
     session[:request_token] = request_token.token
     session[:request_token_secret] = request_token.secret
@@ -29,6 +33,11 @@ class AuthController < ApplicationController
     redirect_to authorize_url
   end
   
+  # After authentication at the Soundcloud authorization page,
+  # the user will be redirected to this page.
+  # We get the access_token and use it to get the Soundcloud user resource
+  # and save the user's information in our database before
+  # we redirect him to his dashboard.
   def callback
     request_token = OAuth::RequestToken.new($sc_consumer, session[:request_token], session[:request_token_secret])
     access_token = request_token.get_access_token
@@ -45,6 +54,6 @@ class AuthController < ApplicationController
       user.save!
     end
     
-    redirect_to :controller => :home
+    redirect_to :controller => :home, :action => :dashboard
   end
 end

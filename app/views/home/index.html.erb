@@ -1,5 +1,8 @@
 <h3 class="contenttitle">Howdy</h3>
-<p>Please <%= link_to "login", login_path %> or <%= link_to "sign up", signup_user_path %>.</p>
+
+<% if not session[:user_id] -%>
+	<p>Please <%= link_to "login", login_path %> or <%= link_to "sign up", signup_user_path %>.</p>
+<% end -%>
 
 <h4>Hot Tracks</h4>
 <% @hot_tracks[0...5].each do |track| -%>

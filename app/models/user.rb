@@ -2,11 +2,6 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
   
-  validates_format_of     :email,
-                          :with       => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
-                          :message    => 'E-Mail must be valid'
-  validates_uniqueness_of :email
-  
   attr_accessor :password_confirmation
   validates_confirmation_of :password
   

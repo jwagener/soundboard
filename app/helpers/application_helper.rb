@@ -19,4 +19,8 @@ module ApplicationHelper
   def users_path
     {:controller => 'user'}
   end
+  
+  def users_dashboard_path
+    {:controller => 'home', :action => 'dashboard'}
+  end
 end
