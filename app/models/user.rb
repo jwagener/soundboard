@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
 private
   
   def password_non_blank
-    errors.add(:password, "Missing password") if hashed_password.blank?
+    errors.add(:password, " can't be blank") if hashed_password.blank?
   end
   
   def create_new_salt

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>untitled</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Eric Wahlforss">
+	<!-- Date: 2009-06-12 -->
+  <style type="text/css">
+    body {
+      font-family: arial;
+    }
+
+    input,label {
+      display: block;
+    }
+  </style>
+  
+  <script type="text/javaScript">
+  function myPopUpWin() {
+  var iMyWidth;
+  var iMyHeight;
+  //half the screen width minus half the new window width (plus 5 pixel borders).
+  iMyWidth = (window.screen.width/2) - (350/2 + 10);
+  //half the screen height minus half the new window height (plus title and status bars).
+  iMyHeight = (window.screen.height/2) - (500/2 + 50);
+  //Open the window.
+  var win2 = window.open("sc-connect.html","Window2","status=no,height=350,width=500,resizable=yes,left=" + iMyWidth + ",top=" + iMyHeight + ",screenX=" + iMyWidth + ",screenY=" + iMyHeight + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no");
+  win2.focus();
+  }
+  </script>
+</head>
+<body>
+  <div style="width:500px;margin:100px auto">
+  <h1>You're done! Please check your email, and click the link to verify your account!</h1>
+</div>
+</body>
+</html>
