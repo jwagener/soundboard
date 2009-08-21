@@ -8,6 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'logout', :controller => 'auth', :action => 'logout'
   map.connect 'signup', :controller => 'user', :action => 'signup'
   
+  map.connect 'users/:name', :controller => 'user', :action => 'profile'
   
   
   map.with_options :controller => 'oauth' do |oauth|
