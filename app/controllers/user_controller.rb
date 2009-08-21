@@ -8,7 +8,7 @@ class UserController < ApplicationController
 
     if @current_user.save
       session[:user_id] = @current_user.id
-      flash[:notice] = "Welcome on board, #{@user.name}!"
+      flash[:notice] = "Welcome on board, #{@current_user.name}!"
       redirect_to :controller => 'user', :action => 'profile', :name => @current_user.name
     else
       render :action => "signup"
