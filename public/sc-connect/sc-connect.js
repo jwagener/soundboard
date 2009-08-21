@@ -3,13 +3,25 @@ var SC = {
     'prepareButton': function(link,options){      
       SC.Connect.wrapped_callback = options.callback;
       link.addEventListener('click',function(){
-        SC.Connect.popup_window = window.open(options.request_token_endpoint,"sc_connect_popup","location=1, width=456, height=550,toolbar=no,scrollbars=yes");
+        SC.Connect.popup_window = open_login(options);
         return false;
       },true);
     },
     'callback': function(query_obj){
       SC.Connect.popup_window.close();
       SC.Connect.wrapped_callback(query_obj);
+    }
+    
+    'open_login': function(options){
+      var width = 456;
+      var height = 550;
+      var left   = (screen.width  - width)/2;
+      var top    = (screen.height - height)/2;
+      
+      var params = 'width='+width+', height='+height;
+      params += ', top='+top+', left='+left;
+      params += "location=1, toolbar=no,scrollbars=yes"
+      return window.open(options.request_token_endpoint,"sc_connect_popup",params);
     }
   },
   'QueryToObject': function(query) {
