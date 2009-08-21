@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  oauth_token_secret: MyString
+  oauth_token_secret: MyString
+  username: MyString
+
+two:
+  oauth_token_secret: MyString
+  oauth_token_secret: MyString
+  username: MyString

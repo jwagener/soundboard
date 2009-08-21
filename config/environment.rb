@@ -38,4 +38,9 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+
+  consumer_token = ENV['SC_CONSUMER_TOKEN']
+  consumer_secret = ENV['SC_CONSUMER_SECRET']
+  $sc_host = 'soundcloud.com'
+  $sc_consumer = Soundcloud.consumer(consumer_token, consumer_secret, "http://api.#{$sc_host}")
 end

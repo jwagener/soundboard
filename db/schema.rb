@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090707091026) do
+ActiveRecord::Schema.define(:version => 20090820125121) do
+
+  create_table "soundcloud_accounts", :force => true do |t|
+    t.string   "oauth_token"
+    t.string   "oauth_token_secret"
+    t.string   "username"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -20,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20090707091026) do
     t.integer  "sc_user_id"
     t.string   "sc_access_token"
     t.string   "sc_access_token_secret"
+    t.integer  "soundcloud_account_id"
   end
 
 end

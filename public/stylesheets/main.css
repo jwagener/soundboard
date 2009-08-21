@@ -1,7 +1,20 @@
 html, body {
 	padding: 0;
 	margin: 0;
-	font-family: Helvetica, Verdana, Arial;
+	font-family: Georgia, Times, serif;
+	background: #f1feff;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+h2, h3, h4 {
+  margin: 0 0 15px 0;
+}
+
+h4 {
+  font-style: italic;
 }
 
 #sitewrapper {
@@ -9,12 +22,22 @@ html, body {
 	left: 50%;
 	margin-left: -320px;
 	width: 600px;
-	background-color: #eee;
+	background-color: #fff4b7;
 }
 
+a {
+  color: #0ea3f8;
+  text-decoration: none;
+}
 #header {
-	background-color: #e8e8eb;
+	background-color: #2eb031;
 	padding: 10px 20px;
+	border-bottom: 5px solid white;
+}
+
+#header h1 {
+  margin: 0;
+  color: #fff;
 }
 
 #footer {
@@ -25,15 +48,28 @@ html, body {
 }
 
 #navi {
-	padding: 5px 20px;
+	padding: 5px 20px 20px 20px;
 	margin: 0;
 }
 
 #navi li {
 	list-style-type: none;
 	display: inline;
-	padding: 0;
 	margin: 0 15px 0 0;
+}
+
+#navi li a {
+  color: #fff;
+  text-decoration: none;
+	background: #0ea3f8;
+	padding: 5px 10px;
+}
+
+#navi li a:hover {
+  color: #fff;
+  text-decoration: none;
+	background: #ff4b1b;
+	padding: 5px 10px;
 }
 
 #content {
@@ -41,13 +77,29 @@ html, body {
 }
 
 #notice {
-	color: #080;
+	color: #fff;
+	background: #ff4b1b;
+	padding: 3px;
+	text-align: center;
 }
 
 #error {
 	color: f00;
 }
 
+.sc-connect_wrapper {
+  background: #fffef1;
+  padding: 10px 15px;
+}
+#sc-connect {
+  border: 0;
+  background: transparent url('/sc-connect/sc-connect.png') top left no-repeat;
+  display: block;
+  text-indent: -9999px;
+  width: 242px;
+  height: 31px;
+  margin-bottom: 10px;
+}
 form .errorExplanation, .fieldWithErrors {
 	color: #f00;
 }

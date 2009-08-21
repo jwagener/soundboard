@@ -7760,3 +7760,3098 @@ Processing HomeController#index (for 127.0.0.1 at 2009-07-07 17:29:10) [GET]
 Rendering template within layouts/application
 Rendering home/index
 Completed in 15428ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-06 17:12:31) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 48942ms (View: 139, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-06 17:13:20) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1184ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-06 17:13:43) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-06 17:13:44) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 56ms (View: 23, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-06 17:14:35) [POST]
+  Parameters: {"user"=>{"name"=>"blauser", "password_confirmation"=>"bla", "password"=>"bla"}, "commit"=>"Sign up", "authenticity_token"=>"b2nbP26y7pHL/fE5zgq6QHhdHCMnG8dGVCvH8YlmK4k="}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'blauser') LIMIT 1[0m
+  [4;36;1mUser Create (9.7ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "sc_user_id", "updated_at", "hashed_password", "sc_access_token", "sc_access_token_secret", "created_at") VALUES('blauser', '187993500.760591513038854', NULL, '2009-08-06 15:14:35', '4cae8131a796cf3c8ddb348d6bfec7c0a6bf2860', NULL, NULL, '2009-08-06 15:14:35')[0m
+Redirected to http://0.0.0.0:3000/home/dashboard
+Completed in 22ms (DB: 10) | 302 Found [http://0.0.0.0/user]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-06 17:14:35) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'blauser' AND "users".id <> 9) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 148ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/home/dashboard]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-06 17:14:43) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 9) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'blauser' AND "users".id <> 9) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 90ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/home/dashboard]
+
+
+Processing AuthController#soundcloud (for 127.0.0.1 at 2009-08-06 17:14:46) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) LIMIT 1[0m
+Redirected to http://api.sandbox-soundcloud.com/oauth/authorize?oauth_token=TWWKFNBzLJg4rVI2y9D7w&oauth_callback=http://0.0.0.0:3000/auth/callback
+Completed in 355ms (DB: 0) | 302 Found [http://0.0.0.0/auth/soundcloud]
+
+
+Processing AuthController#callback (for 127.0.0.1 at 2009-08-06 17:14:57) [GET]
+  Parameters: {"oauth_token"=>"TWWKFNBzLJg4rVI2y9D7w"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 9) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'blauser' AND "users".id <> 9) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "sc_user_id" = 78342, "sc_access_token" = 'jT9TAp6zFpJ9UBMjMEvsQ', "sc_access_token_secret" = '9P5PugBvsyvpMmkddHi5r28Jk7Fcrqg99Pzp9fE8', "updated_at" = '2009-08-06 15:14:57' WHERE "id" = 9[0m
+Redirected to http://0.0.0.0:3000/home/dashboard
+Completed in 398ms (DB: 1) | 302 Found [http://0.0.0.0/auth/callback?oauth_token=TWWKFNBzLJg4rVI2y9D7w]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-06 17:14:57) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 9) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 572ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/home/dashboard]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-06 17:15:11) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1356ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-06 17:15:22) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 9) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 295ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/home/dashboard]
+/!\ FAILSAFE /!\  Thu Aug 20 11:55:06 +0200 2009
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:156:in `require'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:156:in `require'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Thu Aug 20 11:55:07 +0200 2009
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:156:in `require'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:156:in `require'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /opt/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /opt/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing HomeController#index (for ::1 at 2009-08-20 11:57:56) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 47640ms (View: 95, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for ::1 at 2009-08-20 12:00:47) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 12:06:58) [GET]
+  Parameters: {"oauth_nonce"=>"42f47621736d73e66546c943ad9d9952", "oauth_timestamp"=>"1250762818", "oauth_signature_method"=>"HMAC-SHA1", "oauth_consumer_key"=>"zzlAOaBoGOD32WmAi3rVog", "oauth_version"=>"1.0", "oauth_signature"=>"LCpmfOQ6GE21827fG5iUMFbPmxQ="}
+
+ActionController::RoutingError (No route matches "/oauth/request_token" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 12:36:00) [POST]
+  Parameters: {"oauth_callback"=>"http://127.0.0.1/oauth/access_token.php", "username"=>"johannes@soundcloud.com", "display"=>"popup", "grant"=>"true", "oauth_token"=>"t3I3GJ3JOeSsACU1F9SMeA", "password"=>"f00b4r"}
+
+ActionController::RoutingError (No route matches "/oauth/authorize" with {:method=>:post}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for ::1 at 2009-08-20 12:44:59) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1181ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 12:51:37) [GET]
+
+ActionController::RoutingError (No route matches "/oauth/authorize" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#signup (for ::1 at 2009-08-20 12:51:42) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-20 12:51:44) [GET]
+
+ActionController::RoutingError (No route matches "/oauth/get_request_token" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+/!\ FAILSAFE /!\  Thu Aug 20 12:55:51 +0200 2009
+  Status: 500 Internal Server Error
+  undefined local variable or method `ing' for main:Object
+    /Users/jwagener/Downloads/scconnect/config/routes.rb:1
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load_without_new_constant_marking'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /opt/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:145:in `load'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes!'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `each'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:286:in `load_routes!'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:266:in `load!'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:281:in `reload'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-20 12:55:52) [GET]
+
+ActionController::RoutingError (No route matches "/signup" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-20 12:55:53) [GET]
+
+ActionController::RoutingError (No route matches "/signup" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-20 12:55:54) [GET]
+
+ActionController::RoutingError (No route matches "/signup" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-20 12:55:54) [GET]
+
+ActionController::RoutingError (No route matches "/signup" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::1 at 2009-08-20 12:55:54) [GET]
+
+ActionController::RoutingError (No route matches "/signup" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for ::1 at 2009-08-20 12:57:06) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1574ms (View: 94, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserController#signup (for ::1 at 2009-08-20 12:57:12) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#request_token (for ::1 at 2009-08-20 12:57:14) [GET]
+
+LoadError (Expected /Users/jwagener/Downloads/scconnect/app/controllers/oauth_controller.rb to define OauthController):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (21.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for ::1 at 2009-08-20 12:57:30) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://api.sandbox-soundcloud.com/oauth/authorize?oauth_token=iNtEueLEUoGKeWr6lfMoKg&oauth_callback=http://localhost:3000/oauth/callback
+Completed in 281ms (DB: 0) | 302 Found [http://localhost/oauth/request_token]
+
+
+Processing UserController#signup (for ::1 at 2009-08-20 13:02:09) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 54ms (View: 49, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UserController#signup (for ::1 at 2009-08-20 13:08:34) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#request_token (for ::1 at 2009-08-20 13:08:36) [GET]
+
+SyntaxError (/Users/jwagener/Downloads/scconnect/app/controllers/oauth_controller.rb:38: unterminated string meets end of file
+/Users/jwagener/Downloads/scconnect/app/controllers/oauth_controller.rb:38: syntax error, unexpected $end, expecting kEND):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.3ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for ::1 at 2009-08-20 13:08:49) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+OAuth::Unauthorized (401 Unauthorized):
+  oauth (0.3.4) lib/oauth/consumer.rb:167:in `token_request'
+  oauth (0.3.4) lib/oauth/consumer.rb:105:in `get_request_token'
+  app/controllers/oauth_controller.rb:8:in `request_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 13:09:12) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 13:12:52) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 13:12:55) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=YHoyRDVEm5YyqRRywUOyYg&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 894ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 14:25:28) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=muD6olbNFQ4JxyWYF1IFg&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 728ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 14:25:58) [GET]
+  Parameters: {"oauth_token"=>"muD6olbNFQ4JxyWYF1IFg"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/oauth_controller.rb:30:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 14:26:07) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=2XQUGeZl79Yuwu2AZ4uPiA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 745ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090626085848)
+Migrating to AddOauthdataToUser (20090629132304)
+Migrating to RemoveEmailFromUsers (20090707091026)
+Migrating to CreateSoundcloudAccounts (20090820125104)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "soundcloud_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oauth_token_secret" varchar(255), "username" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090820125104')[0m
+Migrating to AddSoundcloudAccountToUser (20090820125121)
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "soundcloud_account_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090820125121')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("soundcloud_accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 15:16:25) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:16:27) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=aB1mLOdmQz11bKh8oxQo0Q&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 908ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:16:37) [GET]
+  Parameters: {"oauth_token"=>"aB1mLOdmQz11bKh8oxQo0Q"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+NoMethodError (undefined method `username' for #<Soundcloud::OAuthConsumer610f3cfb1d14e2a96ce4868f9587906c::User:0x23ec090>):
+  app/controllers/oauth_controller.rb:29:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:18:09) [GET]
+  Parameters: {"oauth_token"=>"aB1mLOdmQz11bKh8oxQo0Q"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+OAuth::Unauthorized (401 Unauthorized):
+  oauth (0.3.4) lib/oauth/consumer.rb:167:in `token_request'
+  oauth (0.3.4) lib/oauth/tokens/request_token.rb:14:in `get_access_token'
+  app/controllers/oauth_controller.rb:24:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:18:13) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=wJYMieWHZvbSTTRFG4Qg&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 772ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:18:17) [GET]
+  Parameters: {"oauth_token"=>"wJYMieWHZvbSTTRFG4Qg"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+NoMethodError (undefined method `username' for #<Soundcloud::OAuthConsumerde082a4309442e08c42a09eed7dcda1d::User:0x246af30>):
+  app/controllers/oauth_controller.rb:29:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (96.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:23:41) [GET]
+  Parameters: {"oauth_token"=>"wJYMieWHZvbSTTRFG4Qg"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+OAuth::Unauthorized (401 Unauthorized):
+  oauth (0.3.4) lib/oauth/consumer.rb:167:in `token_request'
+  oauth (0.3.4) lib/oauth/tokens/request_token.rb:14:in `get_access_token'
+  app/controllers/oauth_controller.rb:24:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:23:43) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=w3GVJwquKpojsbcvlBJ0A&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 899ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:23:47) [GET]
+  Parameters: {"oauth_token"=>"w3GVJwquKpojsbcvlBJ0A"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: oauth_token):
+  app/controllers/oauth_controller.rb:29:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.3ms)
+Rendered rescues/_request_and_response (66.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:23:58) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=DgHVSKQ1tF8USwyHzqF4Q&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 895ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:24:01) [GET]
+  Parameters: {"oauth_token"=>"DgHVSKQ1tF8USwyHzqF4Q"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+NoMethodError (undefined method `username' for #<Soundcloud::OAuthConsumer879aa8647345f88b4d094568657fe789::User:0x25c0a74>):
+  app/controllers/oauth_controller.rb:29:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:24:11) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=l8RV9ZNj2NkjgWUhDmYjA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 769ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:24:15) [GET]
+  Parameters: {"oauth_token"=>"l8RV9ZNj2NkjgWUhDmYjA"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+NoMethodError (undefined method `username' for #<Soundcloud::OAuthConsumer04bf6118d2141ed92889519f0380ffb2::User:0x2471de4>):
+  app/controllers/oauth_controller.rb:29:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (95.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:25:33) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=5kzyD75VAARkfnxTqmyG7A&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1002ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:25:37) [GET]
+  Parameters: {"oauth_token"=>"5kzyD75VAARkfnxTqmyG7A"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+NoMethodError (undefined method `username' for #<Soundcloud::OAuthConsumerf7534e892d8480f7ea071681688e2f9b::User:0x25a9400>):
+  app/controllers/oauth_controller.rb:30:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (24.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 15:25:51) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:25:53) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=iXkqiaK8ptfTyujVJelLA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 899ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:25:56) [GET]
+  Parameters: {"oauth_token"=>"iXkqiaK8ptfTyujVJelLA"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: oauth_token):
+  app/controllers/oauth_controller.rb:30:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:26:32) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=yYvMy4kxAIlZyEcP8JkQ&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1016ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:26:36) [GET]
+  Parameters: {"oauth_token"=>"yYvMy4kxAIlZyEcP8JkQ"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: oauth_token):
+  app/controllers/oauth_controller.rb:32:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090626085848)
+Migrating to AddOauthdataToUser (20090629132304)
+Migrating to RemoveEmailFromUsers (20090707091026)
+Migrating to CreateSoundcloudAccounts (20090820125104)
+Migrating to AddSoundcloudAccountToUser (20090820125121)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("soundcloud_accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddSoundcloudAccountToUser (20090820125121)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "hashed_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime, "sc_user_id" integer, "sc_access_token" varchar(255), "sc_access_token_secret" varchar(255), "soundcloud_account_id" integer) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "hashed_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime, "sc_user_id" integer, "sc_access_token" varchar(255), "sc_access_token_secret" varchar(255)) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090820125121'[0m
+Migrating to CreateSoundcloudAccounts (20090820125104)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDROP TABLE "soundcloud_accounts"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090820125104'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090626085848)
+Migrating to AddOauthdataToUser (20090629132304)
+Migrating to RemoveEmailFromUsers (20090707091026)
+Migrating to CreateSoundcloudAccounts (20090820125104)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "soundcloud_accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "oauth_token" varchar(255), "oauth_token_secret" varchar(255), "username" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090820125104')[0m
+Migrating to AddSoundcloudAccountToUser (20090820125121)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "users" ADD "soundcloud_account_id" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090820125121')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("soundcloud_accounts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:27:55) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=SbmBFAfE7DEWoPOt8gR5cw&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 924ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:27:59) [GET]
+  Parameters: {"oauth_token"=>"SbmBFAfE7DEWoPOt8gR5cw"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSoundcloudAccount Create (0.6ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('YbsLQMqCFZTd5LZtaafvNZfrYnbADf7y4FmgKCZANQo', '2009-08-20 13:28:01', '2009-08-20 13:28:01', 'jwagener2', 'MwfpOprDsrunZgk2vmTwQ')[0m
+
+NoMethodError (undefined method `q' for #<OauthController:0x24aa478>):
+  app/controllers/oauth_controller.rb:34:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (89.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:29:21) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=7Pg148BiW8ExNZsTLmwYbg&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 784ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:29:25) [GET]
+  Parameters: {"oauth_token"=>"7Pg148BiW8ExNZsTLmwYbg"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSoundcloudAccount Create (0.5ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('XZpBpOCU7e5q6shhNQMz8XQGMvDEm0oWVVYaWrGxrEU', '2009-08-20 13:29:27', '2009-08-20 13:29:27', 'jwagener2', '4BsvzjToruecWO7BvXSAzg')[0m
+
+NoMethodError (Attempt to call private method):
+  /opt/lib/ruby/1.8/cgi.rb:342:in `escape'
+  app/controllers/oauth_controller.rb:34:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:31:23) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=nHSjdyn4SvOfBmuVeinA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 913ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:31:27) [GET]
+  Parameters: {"oauth_token"=>"nHSjdyn4SvOfBmuVeinA"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSoundcloudAccount Create (0.4ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('GZGFeYgNOOzh3rhqTiz90HWUfQ1Sn953OzXpnKdgo', '2009-08-20 13:31:29', '2009-08-20 13:31:29', 'jwagener2', '4nRTDibSF9hpFCZ5OsTAQ')[0m
+
+NoMethodError (private method `gsub' called for 3:Fixnum):
+  /opt/lib/ruby/1.8/cgi.rb:342:in `escape'
+  app/controllers/oauth_controller.rb:34:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (89.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:31:43) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=dON7pRrWqShxxjQCT9a5w&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 992ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:31:47) [GET]
+  Parameters: {"oauth_token"=>"dON7pRrWqShxxjQCT9a5w"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSoundcloudAccount Create (0.4ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('1Jk8T5Adc3B6pKUGg3LSIbL5thpqOwneos2r309B7I', '2009-08-20 13:31:49', '2009-08-20 13:31:49', 'jwagener2', 'MmGpGi3HkQNprcJrlety9Q')[0m
+Redirected to http://127.0.0.1:3001/oauth/access_token?url=%2Fsc_connect%2Fclose.html%3Fusername%3Djwagener2%26soundcloud_account_id%3D4
+Completed in 1644ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=dON7pRrWqShxxjQCT9a5w]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:31:49) [GET]
+  Parameters: {"url"=>"/sc_connect/close.html?username=jwagener2&soundcloud_account_id=4"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+OAuth::Unauthorized (401 Unauthorized):
+  oauth (0.3.4) lib/oauth/consumer.rb:167:in `token_request'
+  oauth (0.3.4) lib/oauth/tokens/request_token.rb:14:in `get_access_token'
+  app/controllers/oauth_controller.rb:24:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:31:53) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=MaqT3JaYFrfn5EbIKiBdcQ&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 811ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:31:57) [GET]
+  Parameters: {"oauth_token"=>"MaqT3JaYFrfn5EbIKiBdcQ"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSoundcloudAccount Create (0.5ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('mTfQJHQRvVlygLq0OLRfQMLzF3qsjpEf84BM7PnduE', '2009-08-20 13:31:59', '2009-08-20 13:31:59', 'jwagener2', 'aTU1lzdPPEJgyMJBqOotOg')[0m
+Redirected to http://127.0.0.1:3001/oauth/access_token?url=%2Fsc_connect%2Fclose.html%3Fusername%3Djwagener2%26soundcloud_account_id%3D5
+Completed in 1690ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=MaqT3JaYFrfn5EbIKiBdcQ]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:31:59) [GET]
+  Parameters: {"url"=>"/sc_connect/close.html?username=jwagener2&soundcloud_account_id=5"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+OAuth::Unauthorized (401 Unauthorized):
+  oauth (0.3.4) lib/oauth/consumer.rb:167:in `token_request'
+  oauth (0.3.4) lib/oauth/tokens/request_token.rb:14:in `get_access_token'
+  app/controllers/oauth_controller.rb:24:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 15:32:27) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:32:29) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=Um8gpe28kMTh0GuyTcobdA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 909ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:32:38) [GET]
+  Parameters: {"oauth_token"=>"Um8gpe28kMTh0GuyTcobdA"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Create (0.5ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('fkCRRjHlHBEc5zqrirhjjxEQseo7IkjMPBLI66CQ', '2009-08-20 13:32:40', '2009-08-20 13:32:40', 'jwagener2', 'EQBitooerLr5xKlD1kD98A')[0m
+Redirected to http://127.0.0.1:3001/oauth/access_token?url=%2Fsc_connect%2Fclose.html%3Fusername%3Djwagener2%26soundcloud_account_id%3D6
+Completed in 1646ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=Um8gpe28kMTh0GuyTcobdA]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:32:40) [GET]
+  Parameters: {"url"=>"/sc_connect/close.html?username=jwagener2&soundcloud_account_id=6"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+OAuth::Unauthorized (401 Unauthorized):
+  oauth (0.3.4) lib/oauth/consumer.rb:167:in `token_request'
+  oauth (0.3.4) lib/oauth/tokens/request_token.rb:14:in `get_access_token'
+  app/controllers/oauth_controller.rb:24:in `access_token'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 15:33:01) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:33:02) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=bDbArJowDJGtMXfAxR3HuA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 900ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:33:06) [GET]
+  Parameters: {"oauth_token"=>"bDbArJowDJGtMXfAxR3HuA"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Create (0.4ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('O7DVSMoElx8CfcXLjyrsfe0RF4cTkZcJbf4Pxjt8vaI', '2009-08-20 13:33:07', '2009-08-20 13:33:07', 'jwagener2', 'FBgusKuFiiaP2jNqxWyQA')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=jwagener2&soundcloud_account_id=7
+Completed in 1639ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=bDbArJowDJGtMXfAxR3HuA]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:36:33) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=xUvn7rs4anM8t0bHTS7Fg&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 808ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:36:34) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=xyamfLYRj3ENHvfyTzw&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 787ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:36:38) [GET]
+  Parameters: {"oauth_token"=>"xyamfLYRj3ENHvfyTzw"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Create (0.4ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('zoQ2dIUvCb2SCm5r23sRnmT5Qy6pvgdTF17IuhNE', '2009-08-20 13:36:40', '2009-08-20 13:36:40', 'jwagener2', 'ocRvwxhWV2qnvQupoF3Kg')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=jwagener2&soundcloud_account_id=8
+Completed in 1639ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=xyamfLYRj3ENHvfyTzw]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:43:21) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=FZeokj4ypkQOfa9Zoc5VQ&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 783ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:43:25) [GET]
+  Parameters: {"oauth_token"=>"FZeokj4ypkQOfa9Zoc5VQ"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mSoundcloudAccount Create (0.4ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('Sqy5myKb4tNxqS1sjKGAkY1Bw1wP10Kv3qbKvoxTk8', '2009-08-20 13:43:27', '2009-08-20 13:43:27', 'jwagener2', 'NPL430HeFaWJf93zsPPufg')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=jwagener2&soundcloud_account_id=9
+Completed in 1755ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=FZeokj4ypkQOfa9Zoc5VQ]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 15:44:00) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"", "password_confirmation"=>"", "password"=>""}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/user]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:45:12) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=WXSnjgGekcRDweF0fk1Jw&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 906ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 15:45:15) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"", "password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/signup
+
+ActionView::TemplateError (undefined method `hidden' for #<ActionView::Helpers::FormBuilder:0x2679b14>) on line #33 of app/views/user/signup.html.erb:
+30:     <%= f.password_field :password_confirmation %>
+31:   </p>
+32:   
+33:   <%= f.hidden :soundcloud_account %>
+34:   <div style="border: 1px solid #aaa;margin: 10px 0 10px 0;padding: 5px 10px 0 10px;background: #e6e6e6">
+35:   	<h4 style="margin: 10px 0 0 0">Connect with SoundCloud to get music into your account</h4>
+36:   	<button type="button" id="sc_connect">Connect with SoundCloud</button>
+
+    app/views/user/signup.html.erb:33
+    app/views/user/signup.html.erb:17
+    app/controllers/user_controller.rb:14:in `create'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 15:45:40) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"", "password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/user]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 15:48:43) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"", "password_confirmation"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/user]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:48:46) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=PdcPCUhXzanc8V3HaChZYA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 919ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:48:50) [GET]
+  Parameters: {"oauth_token"=>"PdcPCUhXzanc8V3HaChZYA"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mSoundcloudAccount Create (0.5ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('TjXf8cscBmfNVZb7qRdn5MNGT6MCwk6tnYg7GGCZ0k', '2009-08-20 13:48:52', '2009-08-20 13:48:52', 'jwagener2', 'ybcIt7LTVlAXWwjUsVGfA')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=jwagener2&soundcloud_account=10
+Completed in 1685ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=PdcPCUhXzanc8V3HaChZYA]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 15:54:39) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"", "password_confirmation"=>"", "password"=>""}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/user]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:54:44) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=Q8JlPpSJnC7rkQ3sF3uuA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 834ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:54:47) [GET]
+  Parameters: {"oauth_token"=>"Q8JlPpSJnC7rkQ3sF3uuA"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Create (0.4ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('2vIQNs3MHOdaji0jsrWEoMqEpKpZddcJ7x9fP0Mh8', '2009-08-20 13:54:49', '2009-08-20 13:54:49', 'jwagener2', 'riZKMmasAlYT9kIt6SnNw')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=jwagener2&soundcloud_account=11
+Completed in 1634ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=Q8JlPpSJnC7rkQ3sF3uuA]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 15:55:22) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"soundcloud_account"=>"11", "name"=>"jwagener", "password_confirmation"=>"f00b4r", "password"=>"f00b4r"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+
+ActiveRecord::AssociationTypeMismatch (SoundcloudAccount(#19063730) expected, got String(#111100)):
+  app/controllers/user_controller.rb:7:in `new'
+  app/controllers/user_controller.rb:7:in `create'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (88.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 15:56:03) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1588ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 15:56:07) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:56:08) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=aQ4eXzEksUGNA2m1H37e3Q&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 923ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:56:12) [GET]
+  Parameters: {"oauth_token"=>"aQ4eXzEksUGNA2m1H37e3Q"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Create (0.5ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('K3piKGQzK7f09bakh15TK5XWsTLLgp8N3seh7rmycss', '2009-08-20 13:56:13', '2009-08-20 13:56:13', 'jwagener2', '6hzEOj4M2lNXDXP1JpA5g')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=jwagener2&soundcloud_account_id=12
+Completed in 1641ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=aQ4eXzEksUGNA2m1H37e3Q]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 15:56:20) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"jw", "password_confirmation"=>"f00", "password"=>"f00b4r", "soundcloud_account_id"=>"12"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'jw') LIMIT 1[0m
+  [4;36;1mSoundcloudAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 12) [0m
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 18ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/user]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 15:57:09) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=CFGSj6yWlUHAsan18nE5Ig&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 905ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 15:57:12) [GET]
+  Parameters: {"oauth_token"=>"CFGSj6yWlUHAsan18nE5Ig"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Create (0.4ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('A8PV1N71JwU1C01iZjuAbSs1sFAHej0xhEyPCsr8A', '2009-08-20 13:57:14', '2009-08-20 13:57:14', 'jwagener2', 'NiFD3EaCLWoNkzsXXZiPbg')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=jwagener2&soundcloud_account_id=13
+Completed in 1634ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=CFGSj6yWlUHAsan18nE5Ig]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 15:57:21) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"jw", "password_confirmation"=>"f00b4r", "password"=>"f00b4r", "soundcloud_account_id"=>"13"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'jw') LIMIT 1[0m
+  [4;36;1mSoundcloudAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "created_at", "sc_user_id", "updated_at", "hashed_password", "sc_access_token_secret", "sc_access_token", "soundcloud_account_id") VALUES('jw', '193135600.089306556540245', '2009-08-20 13:57:21', NULL, '2009-08-20 13:57:21', 'bcbb77728904527740144544830bfd4771984684', NULL, NULL, 13)[0m
+Redirected to http://127.0.0.1:3001/home/dashboard
+Completed in 15ms (DB: 1) | 302 Found [http://127.0.0.1/user]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 15:57:21) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'jw' AND "users".id <> 10) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Load (0.2ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 143ms (View: 6, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 15:57:21) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthController#soundcloud (for 127.0.0.1 at 2009-08-20 15:57:30) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to soundcloud. Actions: login and logout):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 15:57:32) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'jw' AND "users".id <> 10) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Load (0.3ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 136ms (View: 2, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 15:57:32) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 15:57:33) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = 'jw' AND "users".id <> 10) LIMIT 1[0m
+  [4;36;1mSoundcloudAccount Load (0.2ms)[0m   [0;1mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 143ms (View: 1, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 15:57:33) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 15:57:35) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'jw' AND "users".id <> 10) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Load (0.2ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 148ms (View: 1, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 15:57:35) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-08-20 15:57:38) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/
+Completed in 6ms (DB: 0) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 15:57:38) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1221ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 15:57:41) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 15:57:48) [POST]
+  Parameters: {"name"=>"jw", "commit"=>"Login", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "password"=>"f00b4r"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'jw') LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/user
+Completed in 7ms (DB: 0) | 302 Found [http://127.0.0.1/login]
+
+
+Processing UserController#index (for 127.0.0.1 at 2009-08-20 15:57:48) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create and signup):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mSoundcloudAccount Load (0.3ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 15:58:29) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1203ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-08-20 16:00:33) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/
+Completed in 8ms (DB: 0) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 16:00:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1258ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 16:00:36) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 16:00:43) [POST]
+  Parameters: {"name"=>"jw", "commit"=>"Login", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "password"=>"f00b4r"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'jw') LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/home/dashboard
+Completed in 7ms (DB: 0) | 302 Found [http://127.0.0.1/login]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 16:00:43) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;35;1mSoundcloudAccount Load (0.3ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 2154ms (View: 1, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 16:00:45) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 16:00:45) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-08-20 16:00:55) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/
+Completed in 6ms (DB: 0) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 16:00:55) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1288ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 16:01:00) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 16:01:57) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=yz9LeqYTX45sYJ55QQvmA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 931ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 16:02:01) [GET]
+  Parameters: {"oauth_token"=>"yz9LeqYTX45sYJ55QQvmA"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mSoundcloudAccount Create (0.4ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('nZ3P7TCTIwdhzRt1hQulgAN6VFj8WTJZR2OlzVPYCA', '2009-08-20 14:02:03', '2009-08-20 14:02:03', 'jwagener2', 'tqwjrlOM3jq8eCcccNzqLw')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=jwagener2&soundcloud_account_id=14
+Completed in 1616ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=yz9LeqYTX45sYJ55QQvmA]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 16:02:06) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"fsd", "password_confirmation"=>"abc", "password"=>"abc", "soundcloud_account_id"=>"14"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'fsd') LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Load (0.3ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 14) [0m
+  [4;36;1mUser Create (0.8ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "created_at", "sc_user_id", "updated_at", "hashed_password", "sc_access_token_secret", "sc_access_token", "soundcloud_account_id") VALUES('fsd', '189269300.375871168794609', '2009-08-20 14:02:06', NULL, '2009-08-20 14:02:06', '3764154c3358e891dd2f2a47b15ef1587dcb3212', NULL, NULL, 14)[0m
+Redirected to http://127.0.0.1:3001/home/dashboard
+Completed in 17ms (DB: 1) | 302 Found [http://127.0.0.1/user]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 16:02:06) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 11) [0m
+  [4;35;1mSoundcloudAccount Load (0.3ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 2114ms (View: 1, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 16:02:08) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 11) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 16:02:08) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 16:02:11) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 11) [0m
+  [4;35;1mSoundcloudAccount Load (0.2ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 2097ms (View: 1, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 16:02:13) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 11) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 16:02:13) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-08-20 16:02:14) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 11) LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/
+Completed in 6ms (DB: 0) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 16:02:14) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1428ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 16:04:19) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 16:04:22) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"", "password_confirmation"=>"", "password"=>"", "soundcloud_account_id"=>""}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."name" = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/user]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 16:04:33) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=0d4s5j0u6sAnlIFMClLKQ&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 810ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 16:05:01) [GET]
+  Parameters: {"oauth_token"=>"0d4s5j0u6sAnlIFMClLKQ"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mSoundcloudAccount Create (0.5ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('xGiC7suNXJCFNdjIfIdXqSACeEDQoGbEjpZfm1ME', '2009-08-20 14:05:03', '2009-08-20 14:05:03', 'user62514', 'CyxzsOCygqhiJfg6kM83YA')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=user62514&soundcloud_account_id=15
+Completed in 1602ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=0d4s5j0u6sAnlIFMClLKQ]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 16:05:07) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"eric", "password_confirmation"=>"eric", "password"=>"eric", "soundcloud_account_id"=>"15"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'eric') LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Load (0.2ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 15) [0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "created_at", "sc_user_id", "updated_at", "hashed_password", "sc_access_token_secret", "sc_access_token", "soundcloud_account_id") VALUES('eric', '189486800.240105724991548', '2009-08-20 14:05:07', NULL, '2009-08-20 14:05:07', '82d144befd93015acb1cea572314155494e2d77a', NULL, NULL, 15)[0m
+Redirected to http://127.0.0.1:3001/home/dashboard
+Completed in 77ms (DB: 1) | 302 Found [http://127.0.0.1/user]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 16:05:07) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mSoundcloudAccount Load (0.2ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 1806ms (View: 1, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 16:05:09) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 16:05:09) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 16:05:19) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mSoundcloudAccount Load (0.2ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 1903ms (View: 1, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 16:05:21) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 16:05:21) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 16:05:23) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1152ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 16:05:31) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mSoundcloudAccount Load (0.2ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 15) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 2000ms (View: 1, DB: 2) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 16:05:33) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 16:05:33) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-08-20 16:05:40) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/
+Completed in 6ms (DB: 0) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 16:05:40) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 4386ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 16:05:47) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 16:05:49) [POST]
+  Parameters: {"name"=>"jw", "commit"=>"Login", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "password"=>"f00b4r"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'jw') LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/user
+Completed in 7ms (DB: 0) | 302 Found [http://127.0.0.1/login]
+
+
+Processing UserController#index (for 127.0.0.1 at 2009-08-20 16:05:49) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create and signup):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 16:05:50) [GET]
+Redirected to http://127.0.0.1:3001/
+Filter chain halted as [:loggedoutonly] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://127.0.0.1/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 16:05:50) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1147ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 16:05:57) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;35;1mSoundcloudAccount Load (0.4ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 2565ms (View: 2, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 16:05:59) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 16:05:59) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-08-20 16:06:09) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/
+Completed in 6ms (DB: 0) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 16:06:09) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1364ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 16:06:19) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 16:06:55) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=NcP2NND51PPDFeSJusY1A&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 956ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-20 16:07:26) [GET]
+  Parameters: {"oauth_token"=>"NcP2NND51PPDFeSJusY1A"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mSoundcloudAccount Create (0.5ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('83u4cNzT8GsCvRTkcg5uojIOnamum9F16kMMCpYMTss', '2009-08-20 14:07:27', '2009-08-20 14:07:27', 'user41853', 'ldPeGpluQZaQZmFFpshc6Q')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=user41853&soundcloud_account_id=16
+Completed in 1618ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=NcP2NND51PPDFeSJusY1A]
+
+
+Processing UserController#create (for 127.0.0.1 at 2009-08-20 16:07:33) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "user"=>{"name"=>"alex", "password_confirmation"=>"alex", "password"=>"alex", "soundcloud_account_id"=>"16"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'alex') LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Load (0.2ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 16) [0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "created_at", "sc_user_id", "updated_at", "hashed_password", "sc_access_token_secret", "sc_access_token", "soundcloud_account_id") VALUES('alex', '188998000.966834125009877', '2009-08-20 14:07:33', NULL, '2009-08-20 14:07:33', '5384a9a25de732d8a024fe94b8c1e05546e685b3', NULL, NULL, 16)[0m
+Redirected to http://127.0.0.1:3001/home/dashboard
+Completed in 15ms (DB: 1) | 302 Found [http://127.0.0.1/user]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 16:07:33) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;35;1mSoundcloudAccount Load (0.3ms)[0m   [0mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 16) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 1858ms (View: 1, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 16:07:35) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 16:07:35) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 16:08:02) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1201ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-08-20 16:25:54) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/
+Completed in 100ms (DB: 0) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 16:25:54) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1831ms (View: 17, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 16:26:01) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 16:26:03) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=PRScoMWpIc7o8kRmV8PW0g&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popp
+Completed in 1047ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 16:31:30) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=vKlQYCaBvhW7BsYEyi2u4Q&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1275ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 16:50:18) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 16:50:21) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=crFJDDR5hJFzZoqoGAS23A&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1078ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 16:51:04) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=xIueb50qmzaP0UGQXn6SA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1704ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 16:51:23) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 16:51:26) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=QkdWssvUrJ2r8muTGltIew&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 924ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 16:56:11) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=Oqc5562bTctj7qzQkD4eVA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 922ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 17:04:06) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 17:04:07) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=WJPcbJQYPFnQTFDeY3NNw&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1638ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 17:25:39) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 17:25:42) [POST]
+  Parameters: {"name"=>"jw", "commit"=>"Login", "authenticity_token"=>"BCk0ksE9o+QkzjPGSMaJQ753Wc1CdBiinjD2nsv0LmA=", "password"=>"f00b4r"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'jw') LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/oauth/request_token
+Completed in 9ms (DB: 0) | 302 Found [http://127.0.0.1/login]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 17:25:42) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=aXLzi3h9YmeMgSGdzCXqiQ&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 951ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 17:25:47) [GET]
+Redirected to http://127.0.0.1:3001/
+Filter chain halted as [:loggedoutonly] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://127.0.0.1/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 17:25:47) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1101ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 17:25:55) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1278ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 17:26:00) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;36;1mSoundcloudAccount Load (0.9ms)[0m   [0;1mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 2449ms (View: 6, DB: 2) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 17:26:02) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 17:26:02) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+/!\ FAILSAFE /!\  Thu Aug 20 17:33:09 +0200 2009
+  Status: 500 Internal Server Error
+  No such file or directory - /Users/jwagener/Downloads/scconnect/config/routes.rb
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `stat'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `each'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:274:in `reload'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Thu Aug 20 17:33:57 +0200 2009
+  Status: 500 Internal Server Error
+  No such file or directory - /Users/jwagener/Downloads/scconnect/config/routes.rb
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `stat'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `each'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:274:in `reload'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Thu Aug 20 17:34:03 +0200 2009
+  Status: 500 Internal Server Error
+  No such file or directory - /Users/jwagener/Downloads/scconnect/config/routes.rb
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `stat'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `each'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:274:in `reload'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Thu Aug 20 17:34:23 +0200 2009
+  Status: 500 Internal Server Error
+  No such file or directory - /Users/jwagener/Downloads/scconnect/config/routes.rb
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `stat'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `each'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:274:in `reload'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Thu Aug 20 17:34:25 +0200 2009
+  Status: 500 Internal Server Error
+  No such file or directory - /Users/jwagener/Downloads/scconnect/config/routes.rb
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `stat'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:297:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `each'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:296:in `routes_changed_at'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:274:in `reload'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:8:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /opt/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /opt/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /opt/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 17:34:58) [GET]
+
+ActionController::RoutingError (No route matches "/styles/main.css" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 17:34:59) [GET]
+
+ActionController::RoutingError (No route matches "/styles/main.css" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 18:13:50) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5636ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#dashboard (for 127.0.0.1 at 2009-08-20 18:14:12) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) [0m
+  [4;36;1mSoundcloudAccount Load (0.3ms)[0m   [0;1mSELECT * FROM "soundcloud_accounts" WHERE ("soundcloud_accounts"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering home/dashboard
+Completed in 2216ms (View: 1, DB: 1) | 200 OK [http://127.0.0.1/home/dashboard]
+
+
+Processing HomeController#sc_connect to js (for 127.0.0.1 at 2009-08-20 18:14:15) [GET]
+  Parameters: {"id"=>"sc_connect"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to sc_connect. Actions: dashboard and index):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 18:14:15) [GET]
+  Parameters: {"45150762"=>nil}
+
+ActionController::RoutingError (No route matches "/images/default_avatar_large.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 18:14:17) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1416ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing AuthController#logout (for 127.0.0.1 at 2009-08-20 18:14:24) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+Redirected to http://127.0.0.1:3001/
+Completed in 6ms (DB: 0) | 302 Found [http://127.0.0.1/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 18:14:24) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1988ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing AuthController#login (for 127.0.0.1 at 2009-08-20 18:14:36) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/login]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 18:14:38) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 18:14:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/sc_connect.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 18:14:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/sc_connect.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 18:16:05) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 68ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 18:16:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/sc_connect.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 18:16:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/sc_connect.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 18:16:35) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 18:16:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/sc_connect.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 18:16:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/sc_connect.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 18:19:07) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 18:19:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/sc_connect.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-20 18:19:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/sc_connect.png" with {:method=>:get}):
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-20 18:19:25) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 18:19:27) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=XnqV1upkvv4mkZMRZshqA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 936ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-20 18:24:19) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=QA7emMrkBQ16qaHh9qjSg&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 933ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-20 22:49:08) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 3388ms (View: 35, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-21 00:08:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 2044ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-21 10:07:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 21575ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-21 10:08:50) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1117ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-21 11:12:14) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1761ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-21 11:27:55) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 2815ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-21 11:39:25) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 11:40:27) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=aTPdirDXJPNCc85qT1JMA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1149ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-21 11:42:24) [GET]
+  Parameters: {"oauth_token"=>"aTPdirDXJPNCc85qT1JMA"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Create (0.6ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('pAs79F3CxyjgD7pE8qC78Jt7KH12r9gdpDukGQvM', '2009-08-21 09:42:26', '2009-08-21 09:42:26', 'jwagener', '7LhzbjfJkIXfbwVKU7uFA')[0m
+Redirected to http://127.0.0.1:3001/sc_connect/close.html?username=jwagener&soundcloud_account_id=17
+Completed in 2097ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=aTPdirDXJPNCc85qT1JMA]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-21 12:08:24) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1758ms (View: 21, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-21 12:08:30) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 27ms (View: 13, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:32) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=lyQP5BCQC9Z6vrE1Z1nAA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1728ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:39) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=L9V343qqBiPjQLmEo2Qapg&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 954ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:40) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=f9cIPLbUPsRGjnQ8H06zjw&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1067ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:41) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=qyLeTgmE077DQ7kfM52Q&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1142ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:42) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=6g1pid1wP54SRA3sOkapA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1024ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:44) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=mLn6TMFuGSk0KH7myll9jQ&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1020ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:45) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=pn7A9AEAhPPrgfOR52bdA&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 931ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:46) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=6jc9dVfA44AvUijA5UHw&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1112ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:47) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=Aqh9SH8Th320SKYZlZ8KXQ&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1073ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:48) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=kP7wREJjqYUbAvkjP5lw&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1062ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:49) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=Jhyc17MDWQggwMY7NWNEw&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1226ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:50) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=Sdl9JWoAzzKxzciZvchdw&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 929ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:08:51) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=Am2S8jiOHtcUpECeB03onQ&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1019ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 12:09:10) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=1eUKBz6DxLgxDj5hKJdg&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1127ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-21 12:09:15) [GET]
+  Parameters: {"oauth_token"=>"1eUKBz6DxLgxDj5hKJdg"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Create (0.7ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('1aAAduYjs7kr1V8KX0ZSnYM84oZLIaObaOoYILA', '2009-08-21 10:09:17', '2009-08-21 10:09:17', 'jwagener', 'NbRAzZmkRygDT0mUR5Vg')[0m
+Redirected to http://127.0.0.1:3001/sc-connect/close.html?username=jwagener&soundcloud_account_id=18
+Completed in 2267ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=1eUKBz6DxLgxDj5hKJdg]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-08-21 13:44:49) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1960ms (View: 29, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing UserController#signup (for 127.0.0.1 at 2009-08-21 13:44:54) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 34ms (View: 23, DB: 0) | 200 OK [http://127.0.0.1/signup]
+
+
+Processing OauthController#request_token (for 127.0.0.1 at 2009-08-21 13:45:03) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=14UwEmDu6jObGWABQvR1Q&oauth_callback=http://127.0.0.1:3001/oauth/access_token&display=popup
+Completed in 1717ms (DB: 0) | 302 Found [http://127.0.0.1/oauth/request_token]
+
+
+Processing OauthController#access_token (for 127.0.0.1 at 2009-08-21 13:45:11) [GET]
+  Parameters: {"oauth_token"=>"14UwEmDu6jObGWABQvR1Q"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;36;1mSoundcloudAccount Create (0.7ms)[0m   [0;1mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('dKvw8B7MYaZNPTkQ1S0pwDTLRdvRNsjOkdPD0o1Ek', '2009-08-21 11:45:13', '2009-08-21 11:45:13', 'jwagener', 'GdaePdn7xdQlUtgYlPu9jg')[0m
+Redirected to http://127.0.0.1:3001/sc-connect/close.html?username=jwagener&soundcloud_account_id=19
+Completed in 2159ms (DB: 1) | 302 Found [http://127.0.0.1/oauth/access_token?oauth_token=14UwEmDu6jObGWABQvR1Q]
+
+
+Processing HomeController#index (for ::1 at 2009-08-21 15:22:59) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 1791ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AuthController#login (for ::1 at 2009-08-21 15:23:12) [GET]
+Rendering template within layouts/application
+Rendering auth/login
+Completed in 241ms (View: 240, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserController#signup (for ::1 at 2009-08-21 15:23:14) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing OauthController#request_token (for ::1 at 2009-08-21 15:23:55) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=Bq849yLHBMXvks8EbVWmg&oauth_callback=http://localhost:3001/oauth/access_token&display=popup
+Completed in 1181ms (DB: 0) | 302 Found [http://localhost/oauth/request_token]
+
+
+Processing OauthController#access_token (for ::1 at 2009-08-21 15:24:18) [GET]
+  Parameters: {"oauth_token"=>"Bq849yLHBMXvks8EbVWmg"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mSoundcloudAccount Create (0.5ms)[0m   [0mINSERT INTO "soundcloud_accounts" ("oauth_token_secret", "created_at", "updated_at", "username", "oauth_token") VALUES('5HF15BCBDYup4qZhAXDL6L1IJQwMH0CLYdOP6neRI', '2009-08-21 13:24:20', '2009-08-21 13:24:20', 'jwagener', 'FuLidQw2yRq4izXO5ghCUA')[0m
+Redirected to http://localhost:3001/sc-connect/close.html?username=jwagener&soundcloud_account_id=20
+Completed in 2301ms (DB: 1) | 302 Found [http://localhost/oauth/access_token?oauth_token=Bq849yLHBMXvks8EbVWmg]
+
+
+Processing UserController#signup (for ::1 at 2009-08-21 15:24:27) [GET]
+Rendering template within layouts/application
+Rendering user/signup
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing OauthController#request_token (for ::1 at 2009-08-21 15:24:29) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=oHS0h3tL6J8s4hcKim8Q&oauth_callback=http://localhost:3001/oauth/access_token&display=popup
+Completed in 1027ms (DB: 0) | 302 Found [http://localhost/oauth/request_token]
+
+
+Processing OauthController#request_token (for ::1 at 2009-08-21 15:25:47) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=ZaGWpWDPhw54q0By5iCEig&oauth_callback=http://localhost:3001/oauth/access_token&display=popup
+Completed in 2529ms (DB: 0) | 302 Found [http://localhost/oauth/request_token]
+
+
+Processing OauthController#request_token (for ::1 at 2009-08-21 15:26:16) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://soundcloud.dev/oauth/authorize?oauth_token=JlEyOCpP458JppiR7rm6g&oauth_callback=http://localhost:3001/oauth/access_token&display=popup
+Completed in 2353ms (DB: 0) | 302 Found [http://localhost/oauth/request_token]

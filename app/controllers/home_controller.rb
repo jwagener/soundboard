@@ -22,8 +22,8 @@ class HomeController < ApplicationController
     @user = User.find(session[:user_id])
 
     # Restore the users access token from the database and connect to SoundCloud
-    access_token = OAuth::AccessToken.new($sc_consumer, @user.sc_access_token, @user.sc_access_token_secret)
-    sc = Soundcloud.register({:access_token => access_token, :site => 'http://api.sandbox-soundcloud.com'})
+    access_token = OAuth::AccessToken.new($sc_consumer, @user.soundcloud_account.oauth_token, @user.soundcloud_account.oauth_token_secret)
+    sc = Soundcloud.register({:access_token => access_token, :site => "http://api.#{$sc_host}"})
 
     # See if the request works.
     # If it fails, the user revoked access to his account in the
@@ -32,13 +32,6 @@ class HomeController < ApplicationController
       @me = sc.User.find_me
     rescue
       @me = nil
-
-      if @user
-        @user.sc_user_id = nil
-        @user.sc_access_token = nil
-        @user.sc_access_token_secret = nil
-        @user.save!
-      end
     end
 
     # Look for the latest track of the user

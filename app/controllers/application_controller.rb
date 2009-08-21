@@ -13,14 +13,7 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
-  
-  # Register your App at http://sandbox-soundcloud.com/settings/applications/new
-  # and put your Applications Consumer Key & Secret here.
-  consumer_token = 'nsLoOtlWBKdEvhUA9wg4Yw'
-  consumer_secret = 'M4AOZXSVoHQEWx9CMQSvuQyUebQICd4hhr752DE7sJc'
-  # Create a global instance of the consumer once
-  $sc_consumer = Soundcloud.consumer(consumer_token, consumer_secret, 'http://api.sandbox-soundcloud.com')
-  
+
 protected
   def authorize
     unless User.find_by_id(session[:user_id])

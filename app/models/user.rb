@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  belongs_to :soundcloud_account
+  
   validates_presence_of :name
   validates_uniqueness_of :name
   
@@ -6,6 +8,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   
   validate :password_non_blank
+  
+  validates_presence_of :soundcloud_account  
   
   def self.authenticate(name, password)
     user = self.find_by_name(name)

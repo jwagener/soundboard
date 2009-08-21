@@ -1,4 +1,20 @@
-<%= javascript_include_tag "popup.js" %>
+<script>
+  $(document).ready(function(){
+    var options = { 
+      'request_token_endpoint': '/oauth/request_token',
+      'access_token_endpoint': '/oauth/access_token',
+      'callback': function(query_obj){        
+        $('#user_soundcloud_account_id').val(query_obj['soundcloud_account_id']);
+        
+        $('#sc-connect_logged_in .username').text(query_obj['username'])
+        $('#sc-connect_logged_in').show();
+        $('#sc-connect_login').hide();
+        
+      }
+    };
+    SC.Connect.prepareButton($('#sc-connect')[0],options);
+  });
+</script>
 
 <h3 class="contenttitle">Sign Up</h3>
 
@@ -17,16 +33,28 @@
     <%= f.label :password_confirmation, 'Confirm Password' %><br />
     <%= f.password_field :password_confirmation %>
   </p>
-  <div style="border: 1px solid #aaa;margin: 10px 0 10px 0;padding: 5px 10px 0 10px;background: #e6e6e6">
+  
+  <%= f.hidden_field :soundcloud_account_id %>
+  <div class="sc-connect_wrapper">
+    <div id="sc-connect_login">
   	<h4 style="margin: 10px 0 0 0">Connect with SoundCloud to get music into your account</h4>
-  	<button type="button" id="connect-sc" onclick="myPopUpWin();">Connect with SoundCloud</button>
-  	<div id="sc-connected" style="display:none">
+  	
+  	
+  	<a href="#" style="border: 0; background: transparent url('/sc-connect/sc-connect.png') top left no-repeat;display: block;
+    text-indent: -9999px; width: 242px; height: 31px; margin-bottom: 10px;" id="sc-connect">Connect with SoundCloud</a>
+    
+    
+  	  	<div id="sc-connected" style="display:none">
 		Your <a href="#">Forss</a> SoundCloud account is now connected.
 	</div>
   	<h5 style="margin: 10px 0 0 0">What is SoundCloud?</h5>
   	<p style="font-size: 12px;color: #444">
 		Connect with SoundCloud to be able to upload music to your profile, and receive tracks in a hassle-free way. Don't have an account? Signing up is free and takes 30 seconds!
 	</p>
+	 </div>
+	 <div id="sc-connect_logged_in">
+	  You are connected to this SoundCloud account: <span class="username"></span>
+	 </div>
   </div>
   <p>
     <%= link_to 'Cancel', home_path %> <%= f.submit 'Sign up' %>

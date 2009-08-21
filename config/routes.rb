@@ -7,6 +7,14 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'login', :controller => 'auth', :action => 'login'
   map.connect 'logout', :controller => 'auth', :action => 'logout'
   map.connect 'signup', :controller => 'user', :action => 'signup'
+  
+  
+  
+  map.with_options :controller => 'oauth' do |oauth|
+    oauth.connect "oauth/request_token", :action => 'request_token'
+    oauth.connect "oauth/access_token",  :action => 'access_token'
+  end
+  
   #map.connect 'user', '/users'
   #map.connect 'users', :controller => 'user', :action => 'all'
   
