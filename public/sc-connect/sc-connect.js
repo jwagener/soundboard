@@ -3,14 +3,14 @@ var SC = {
     'prepareButton': function(link,options){      
       SC.Connect.wrapped_callback = options.callback;
       link.addEventListener('click',function(){
-        SC.Connect.popup_window = open_login(options);
+        SC.Connect.popup_window = SC.Connect.open_login(options);
         return false;
       },true);
     },
     'callback': function(query_obj){
       SC.Connect.popup_window.close();
       SC.Connect.wrapped_callback(query_obj);
-    }
+    },
     
     'open_login': function(options){
       var width = 456;
