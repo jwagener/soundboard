@@ -7,7 +7,7 @@ require 'soundcloud'
 class ApplicationController < ActionController::Base
   before_filter :set_current_user
   before_filter :authorize, :except => [:login, :index, :signup, :profile]
-  before_filter :loggedoutonly, :only => [:login, :signup]
+  #before_filter :loggedoutonly, :only => [:login, :signup]
   
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
