@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   # get the hotest tracks that are streamable. This way you can get public
   # data without authenticating as a user first.
   def index
-    sc = Soundcloud.register({:site => 'http://api.sandbox-soundcloud.com'})
+    sc = Soundcloud.register({:site => "http://api.#{$sc_host}"})
     @hot_tracks = sc.Track.find(:all, :params => {"filter" => "streamable", "order" => "hotness"} )
   end
 
