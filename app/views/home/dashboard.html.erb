@@ -13,10 +13,9 @@
 	<small>You can revoke the connection at <a href="http://soundcloud.com/settings/extensions">SoundCloud.com > Settings</a>.</small>
 	
 	
-	
+	<strong>Your last 5 tracks</strong>
 	<% @tracks.each do |track| -%>
 		<div style="clear:both;">
-			<strong>Last Track</strong>
 			<div style="font-size: 11px;">
 				<object height="81" width="100%">
 					<param name="movie" value="http://player.<%=$sc_host%>/player.swf?track=<%= track.permalink %>&theme_color=FFF4B7"></param>

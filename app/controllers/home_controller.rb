@@ -36,7 +36,7 @@ class HomeController < ApplicationController
 
     # Look for the latest track of the user
     begin
-      @tracks = @me.tracks[0..5]
+      @tracks = @me.tracks[0..4]
     rescue
       @tracks = []
     end
