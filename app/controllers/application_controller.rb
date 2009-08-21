@@ -5,7 +5,7 @@ gem 'soundcloud-ruby-api-wrapper'
 require 'soundcloud'
 
 class ApplicationController < ActionController::Base
-  before_filter :set_me
+  before_filter :set_current_user
   before_filter :authorize, :except => [:login, :index, :signup, :profile]
   before_filter :loggedoutonly, :only => [:login, :signup]
   
@@ -16,12 +16,12 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
 protected
-  def set_me 
-    @me  =  User.find_by_id(session[:user_id])
+  def set_current_user
+   @current_user =  User.find_by_id(session[:user_id])
   end
   
   def authorize
-    unless @me
+    unless @current_user
       session[:original_uri] = request.request_uri
       flash[:notice] = "Please log in first"
     end

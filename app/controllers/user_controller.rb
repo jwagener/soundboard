@@ -4,12 +4,12 @@ class UserController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user])
+    @current_user = User.new(params[:user])
 
-    if @user.save
-      session[:user_id] = @user.id
+    if @current_user.save
+      session[:user_id] = @current_user.id
       flash[:notice] = "Welcome on board, #{@user.name}!"
-      redirect_to :controller => 'user', :action => 'profile', :name => @me.name
+      redirect_to :controller => 'user', :action => 'profile', :name => @current_user.name
     else
       render :action => "signup"
     end

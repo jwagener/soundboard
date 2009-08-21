@@ -1,10 +1,10 @@
 class AuthController < ApplicationController
   def login
     if request.post?
-      if @me = User.authenticate(params[:name], params[:password])
-        session[:user_id] = @me.id
+      if @current_user = User.authenticate(params[:name], params[:password])
+        session[:user_id] = @current_user.id
 
-        redirect_to :controller => 'user', :action => 'profile', :name => @me.name
+        redirect_to :controller => 'user', :action => 'profile', :name => @current_user.name
       else
         flash.now[:notice] = "Invalid user / password combination"
       end
