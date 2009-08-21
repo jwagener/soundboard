@@ -13,10 +13,19 @@ var SC = {
     },
     
     'open_login': function(options){
+      
+      var pLeft = (document.all)?window.screenLeft:window.screenX;
+      var pTop = (document.all)?window.screenTop:window.screenY;
+      
+      var pXCenter = pTop + (window.outerHeight/2);
+      var pYCenter = pLeft + (window.outerWidth/2);
+          
       var width = 456;
       var height = 550;
-      var left   = (screen.width  - width)/2;
-      var top    = (screen.height - height)/2;
+      
+      var top = pXCenter - (height/2);
+      var left = pYCenter - (width/2);
+
       
       var params = 'width='+width+', height='+height;
       params += ', top='+top+', left='+left;
