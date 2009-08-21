@@ -7,17 +7,17 @@
 	You're connected to SoundCloud as <%= @me.username %>.<br />
 	<small>You can revoke the connection at SoundCloud.com > Settings.</small>
 	
-	<% if @track -%>
+	<% @tracks.each do |track| -%>
 		<div style="clear:both;">
 			<strong>Last Track</strong>
 			<div style="font-size: 11px;">
 				<object height="81" width="100%">
-					<param name="movie" value="http://player.<%=$sc_host%>/player.swf?track=<%= @track.permalink %>&theme_color=FFF4B7"></param>
+					<param name="movie" value="http://player.<%=$sc_host%>/player.swf?track=<%= track.permalink %>&theme_color=FFF4B7"></param>
 					<param name="allowscriptaccess" value="always"></param>
-					<embed allowscriptaccess="always" height="81" src="http://player.<%=$sc_host%>/player.swf?track=<%= @track.permalink %>&theme_color=FFF4B7" type="application/x-shockwave-flash" width="100%"> </embed>
+					<embed allowscriptaccess="always" height="81" src="http://player.<%=$sc_host%>/player.swf?track=<%= track.permalink %>&theme_color=FFF4B7" type="application/x-shockwave-flash" width="100%"> </embed>
 				</object>
 				<div style="padding-top: 5px;">
-					<a href="<%= @track.permalink_url %>"><%= @track.title %></a>  by  <a href="<%= @me.permalink_url %>"><%= @me.username %></a>
+					<a href="<%= track.permalink_url %>"><%= track.title %></a>  by  <a href="<%= @me.permalink_url %>"><%= @me.username %></a>
 				</div>
 			</div>
 		</div>
