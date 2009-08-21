@@ -5,7 +5,7 @@ gem 'soundcloud-ruby-api-wrapper'
 require 'soundcloud'
 
 class ApplicationController < ActionController::Base
-  before_filter :authorize, :except => [:login, :index, :signup]
+  before_filter :authorize, :except => [:login, :index, :signup, :profile]
   before_filter :loggedoutonly, :only => [:login, :signup]
   
   helper :all # include all helpers, all the time
