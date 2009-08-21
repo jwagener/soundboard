@@ -26,7 +26,6 @@ var SC = {
       var top = pXCenter - (height/2);
       var left = pYCenter - (width/2);
 
-      
       var params = 'width='+width+', height='+height;
       params += ', top='+top+', left='+left;
       params += "location=1, toolbar=no,scrollbars=yes"
