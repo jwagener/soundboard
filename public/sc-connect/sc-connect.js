@@ -3,7 +3,7 @@ var SC = {
     'prepareButton': function(link,options){      
       SC.Connect.wrapped_callback = options.callback;
       link.addEventListener('click',function(){
-        SC.Connect.popup_window = window.open(options.request_token_endpoint,"sc_connect_popup","location=1, width=456, height=520,toolbar=no,scrollbars=yes");
+        SC.Connect.popup_window = window.open(options.request_token_endpoint,"sc_connect_popup","location=1, width=456, height=550,toolbar=no,scrollbars=yes");
         return false;
       },true);
     },
