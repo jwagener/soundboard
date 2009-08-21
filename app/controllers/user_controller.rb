@@ -18,7 +18,7 @@ class UserController < ApplicationController
   
   def profile
 
-    @user = User.find(params[:name])
+    @user = User.find_by_name(params[:name])
 
     # Restore the users access token from the database and connect to SoundCloud
     access_token = OAuth::AccessToken.new($sc_consumer, @user.soundcloud_account.oauth_token, @user.soundcloud_account.oauth_token_secret)
