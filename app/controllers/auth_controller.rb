@@ -5,7 +5,7 @@ class AuthController < ApplicationController
       if user
         session[:user_id] = user.id
 
-        redirect_to  {:controller => 'home', :action => 'dashboard'}
+        redirect_to :controller => 'home', :action => 'dashboard'
       else
         flash.now[:notice] = "Invalid user / password combination"
       end
