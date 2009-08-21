@@ -15,7 +15,7 @@
 		</div>
 		<ul id="navi">
 			<li><%= link_to "Home", '/' %></li>
-			<% if @me -%>
+			<% if @current_user -%>
 				<li><%= link_to "Your profile", user_profile_path(@current_user.name) %></li>
 				<li><%= link_to "Logout", logout_path %></li>
 			<% else -%>
