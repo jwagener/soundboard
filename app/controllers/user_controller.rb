@@ -9,7 +9,7 @@ class UserController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Welcome on board, #{@user.name}!"
-      redirect_to :controller => 'home', :action => 'dashboard'
+      redirect_to :controller => 'user', :action => 'profile', :name => @me.name
     else
       render :action => "signup"
     end
