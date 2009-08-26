@@ -4,9 +4,7 @@ class UserController < ApplicationController
   end
   
   def create
-  
     @user = @current_user = User.new(params[:user])
-
     if @current_user.save
       session[:user_id] = @current_user.id
       flash[:notice] = "Welcome on board, #{@current_user.name}!"
@@ -18,7 +16,6 @@ class UserController < ApplicationController
   
   
   def profile
-
     @user = User.find_by_name(params[:name])
 
     # Restore the users access token from the database and connect to SoundCloud
