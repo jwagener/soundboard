@@ -1,20 +1,11 @@
 <h3 class="contenttitle">Howdy</h3>
 
-<% if not session[:user_id] -%>
-	<p>Please <%= link_to "login", login_path %> or <%= link_to "sign up", signup_user_path %>.</p>
-<% end -%>
 
-<h4>Hot Tracks</h4>
-<% @hot_tracks[0...5].each do |track| -%>
-	<div style="font-size: 11px;">
-		<object height="81" width="100%">
-			<param name="movie" value="http://player.<%=$sc_host%>/player.swf?track=<%= track.permalink %>&theme_color=FFF4B7"></param>
-			<param name="allowscriptaccess" value="always"></param>
-			<embed allowscriptaccess="always" height="81" src="http://player.<%=$sc_host%>/player.swf?track=<%= track.permalink %>&theme_color=FFF4B7" type="application/x-shockwave-flash" width="100%"> </embed>
-		</object>
-		<div style="padding-top: 5px;">
-			<a href="<%= track.permalink_url %>"><%= track.title %></a>  by  <a href="<%= track.user_id %>"><%= track.user_id %></a>
-		</div>
-	</div>
-	<br />
-<% end -%>
+SoundBoard.me is a demo application showing how <a href="http://wiki.github.com/soundcloud/sc-connect">SoundCloud with
+
+SoundCloud</a>
+works. 'Connect with SoundCloud' allows users to easily move their
+music and SoundCloud DropBox over to any site on the web. You can see
+an example profile soundboard <a href="/users/ericwahlforss/">here</a>
+, or sign up for a new
+profile <a href="/signup">here</a>.
