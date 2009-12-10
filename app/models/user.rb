@@ -9,8 +9,6 @@ class User < ActiveRecord::Base
   
   validate :password_non_blank
   
-  validates_presence_of :soundcloud_account  
-  
   def self.authenticate(name, password)
     user = self.find_by_name(name)
     if user

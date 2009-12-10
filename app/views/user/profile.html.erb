@@ -1,3 +1,70 @@
+<% if @current_user == @user %>
+
+<% form_for(@user) do |f| %>
+<%= f.hidden_field :soundcloud_account_id %>
+<script>
+  $(document).ready(function(){
+    var options = { 
+      'request_token_endpoint': '/oauth/request_token',
+      'access_token_endpoint': '/oauth/access_token',
+      'callback': function(query_obj){        
+        $('#user_soundcloud_account_id').val(query_obj['soundcloud_account_id']);
+        
+        //$('#sc-connect_logged_in .username').text(query_obj['username'])
+        //$('#sc-connect_logged_in').show();
+        //$('#sc-connect_login').hide();
+        $('form.edit_user').submit();
+      }
+    };
+    SC.Connect.prepareButton($('#sc-connect')[0],options);
+    
+    $('#user_name').focus();
+  });
+</script>
+
+
+<div class="sc-connect_wrapper">
+  <% if @user.soundcloud_account %>
+
+  <div id="sc-connect_logged_in" style="">
+   This profile is connected to the SoundCloud account: <span class="username">"<%= @me.username %>"</span>
+  </div>
+  <p>
+  <% form_for(@user) do |f| %>
+  <%= f.hidden_field :soundcloud_account_id, :value => 'nil'%>
+  <INPUT TYPE="image" SRC="/sc-connect/disconnect-small.png" VALUE="Disconnect"
+  ALT="Disconnect" NAME="Disconnect">
+  <% end %>
+  </p>
+  <% else %>
+  <div id="sc-connect_login">
+	<h4 style="margin: 10px 0 0 0">Connect with SoundCloud to import your tracks!</h4>
+	
+	
+	<a href="#" style="border: 0; background: transparent url('/sc-connect/sc-connect.png') top left no-repeat;display: block;
+  text-indent: -9999px; width: 280px; height: 44px; margin-bottom: 10px;" id="sc-connect">Connect with SoundCloud</a>
+  
+  
+	  	<div id="sc-connected" style="display:none">
+	Your <a href="#">Forss</a> SoundCloud account is now connected.
+</div>
+	<p style="font-size: 12px;color: #444">
+	Connect with SoundCloud to be able to upload music to your profile, and receive tracks in a hassle-free way. Don't have an account? Signing up is free and takes 30 seconds!
+</p>
+ </div>
+ <div id="sc-connect_logged_in" style="display: none;">
+  You are connected to this SoundCloud account: <span class="username"></span>
+ </div>
+ <% end %>
+</div>
+<% end %>
+<% end %>
+
+
+
+<br/>
+<% if @user.soundcloud_account %>
+
 <h3 class="contenttitle"><%= @me.username %></h3>
 	<img style="float: left; margin: 0 10px 10px 0; border:5px #ddd solid;" src="<%= @me.avatar_url %>" />
 	Welcome to <a href="http://soundcloud.com/<%= @me.permalink %>"><%= @me.username %></a>'s profile.<br />
@@ -7,3 +74,4 @@
 <h3 style="clear:both; display:block;">His latest tracks</h3>
 <object height="225" width="100%">  <param name="movie" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2F<%= @me.permalink %>"></param>  <param name="allowscriptaccess" value="always"></param>  <embed allowscriptaccess="always" height="225" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fsoundcloud.com%2F<%= @me.permalink %>" type="application/x-shockwave-flash" width="100%"> </embed> </object>
 
+<% end %>
